@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bpr>
+    <module-summary>
+    	<name>资金</name>
+    </module-summary> 
+    
+ <item>
+  <group>付款排程</group>
+   <function>单公司的数据行数量</function>
+   <sql><![CDATA[select /*+BPR*/ a.rn paiming,a.c count,o.name name from (select 
+ *
+  from (select row_number() over(order by count(1) desc) rn,
+               pk_org,
+               count(1) c
+          from ps_apply where pk_org is not null
+         group by pk_org)     
+ where rn <= 50) a,org_orgs o where a.pk_org=o.pk_org order by a.rn asc]]></sql>
+   </item>  
+ 
+ <item>
+  <group>付款排程</group>
+   <function>单公司每天的单据行数量</function>
+   <sql><![CDATA[select /*+BPR*/ a.rn paiming ,a.c count,o.name from (select 
+ *
+  from (select row_number() over(order by count(1) desc) rn,
+               pk_org  ,
+               count(1)  c
+          from fbm_action where pk_org is not null
+         group by pk_org) t
+ where rn <= 50 ) a ,org_orgs o 
+ where a.pk_org=o.pk_org order by a.rn asc
+]]></sql>
+ </item>  
+ 
+ <item>  
+   <group>商业汇票</group>
+   <function>票据堆栈数据表</function>
+   <sql><![CDATA[select /*+BPR*/ a.rn paiming, a.c count, o.name
+  from (select 
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       pk_org  ,
+                       count(1) c
+                  from fbm_action where pk_org is not null
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+ </item>  
+ 
+ <item>  
+   <group>商业汇票</group>
+   <function>收票登记和票据</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select 
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       pk_org  ,
+                       count(1) c
+                  from fbm_register
+                 group by pk_org) t
+         where rn<= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+ </item>  
+ 
+ <item>   
+   <group>现金管理</group>
+   <function>单组织的银行对账记录</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       pk_org  ,
+                       count(1) c
+                  from gl_bankreceipt where pk_org is not null
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc
+]]></sql>
+ </item>  
+ 
+ 
+ <item>   
+   <group>现金管理</group>
+   <function>单组织的结算信息行数量</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       pk_org ,
+                       count(1) c
+                  from cmp_detail where pk_org is not null
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+ </item>  
+ 
+ <item>  
+   <group>信贷管理</group>
+   <function>合同执行情况</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       cdm_contract.pk_org,
+                       count(1) c
+                  from cdm_contract_exec
+                 inner join cdm_contract on cdm_contract_exec.pk_contract =
+                                            cdm_contract.pk_contract
+                 group by cdm_contract.pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+ </item>
+ 
+ <item>  
+   <group>信贷管理</group>
+   <function>合同</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       pk_org  ,
+                       count(1) c
+                  from cdm_contract where pk_org is not null
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+  </item>
+ 
+ 
+ 
+ <item>     
+   <group>银企直联</group>
+   <function>银行对账单</function>
+   <sql><![CDATA[select /*+BPR*/ count(1) 数量 from ebank_dzd]]></sql>
+ </item>
+<item>     
+   <group>银企直联</group>
+   <function>支付指令</function>
+   <sql><![CDATA[select /*+BPR*/ count(1) 数量 from ebank_paylog]]></sql>
+ </item>
+
+<item>     
+   <group>银企直联</group>
+   <function>工资清单</function>
+   <sql><![CDATA[select /*+BPR*/ count(1) 数量 from ebank_dfgz_h]]></sql>
+ </item>
+
+
+
+
+ <item>     
+   <group>资金结算</group>
+   <function>单公司单据数量(委托付款)</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       pk_org ,
+                       count(1) c
+                  from fts_paymentfund where pk_org is not null
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+ </item>  
+ 
+ <item>  
+   <group>内部账户账</group>
+   <function>单公司内部账户账数量</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       pk_org ,
+                       count(1) c
+                  from fts_account_detail where pk_org is not null
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+ </item>
+   
+ <item>
+   <group>资金调度</group>
+   <function>单公司单据数量（下拨单）</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       pk_org ,
+                       count(1) c
+                  from sf_allocate_b where pk_org is not null 
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+ </item>  
+ 
+</bpr>

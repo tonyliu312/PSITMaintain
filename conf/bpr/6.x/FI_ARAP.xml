@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bpr>
+    <module-summary>
+    	<name>财务-应收应付</name>
+    </module-summary> 
+    
+ <item>
+  <group>单公司的单据行数量</group>
+   <function>客户应收单行</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       pk_org  
+                  from ar_recitem where pk_org is not null
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+   </item>
+  
+  <item>
+  <group>单公司的单据行数量</group>
+   <function>客户收款单行</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       pk_org  
+                  from ar_gatheritem where pk_org is not null
+                 group by pk_org) t
+         where rn<= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc
+]]></sql>
+   </item>
+  
+  <item>
+  <group>单公司的单据行数量</group>
+   <function>供应商付款单行</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select 
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       pk_org  
+                  from ap_payitem where pk_org is not null
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+  </item>
+  
+  <item>
+  <group>单公司的单据行数量</group>
+   <function>供应商应付单行</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select 
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       pk_org  
+                  from ap_payableitem
+                 group by pk_org) t
+         where rn<= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc]]></sql>
+  </item>
+ <item> 
+  <group>未核销单据行数量</group>
+   <function>收付业务数据</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming, a.c count, o.name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       pk_org 
+                  from arap_busidata
+                 group by pk_org) t
+         where rn <= 50) a,
+       org_orgs o
+ where a.pk_org = o.pk_org
+ order by a.rn asc
+]]></sql> 
+ </item>
+ 
+ <item>
+  <group>按照客户和供应商的单据行分布</group>
+   <function>客户应收单行</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming,
+ a.c count,
+ (select name from bd_cust_supplier where PK_cust_sup = a.customer) customer_name
+  from (select /*+BPR*/
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       customer 
+                  from ar_recitem
+                 group by customer) t
+         where rn <= 50) a
+ order by a.rn asc
+]]></sql>
+ </item>
+
+ 
+  <item>
+  <group>按照客户和供应商的单据行分布</group>
+   <function>供应商付款单行</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming,
+ a.c count,
+ (select name from bd_cust_supplier where PK_cust_sup = a.supplier) supplier_name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       supplier  
+                  from ap_payitem
+                 group by supplier) t
+         where rn <= 50) a
+ order by a.rn asc
+]]></sql>
+ </item>
+ 
+  <item>
+  <group>按照客户和供应商的单据行分布</group>
+   <function>供应商应付单行</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming,
+ a.c count,
+ (select name from bd_cust_supplier where PK_cust_sup = a.supplier) supplier_name
+  from (select  
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       supplier  
+                  from ap_payableitem
+                 group by supplier) t
+         where rn <= 50) a
+ order by a.rn asc
+]]></sql>   
+ </item>
+ 
+ 
+ <item> 
+  <group>业务登账数据</group>
+   <function>常用字段</function>
+   <sql><![CDATA[select /*+BPR*/
+ a.rn paiming,
+ a.c count,
+ (select name from org_orgs where pk_org = a.pk_org) org_name
+  from (select 
+         *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       pk_org  
+                  from arap_tally
+                 group by pk_org) t
+         where rn<= 50) a
+ order by a.rn asc
+]]></sql> 
+ </item>
+ 
+</bpr>

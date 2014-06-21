@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<logdb>
+		<dbtype>access</dbtype>
+		<connectstr>jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ={basedir}/logdb/logdb.mdb</connectstr>
+		<username></username>
+		<password></password>
+		<jdbcdriver>sun.jdbc.odbc.JdbcOdbcDriver</jdbcdriver>
+</logdb>
+<systable>
+	<tableexist>select name from MSysObjects where name='#tablename'</tableexist>
+</systable>
+<nclog>
+		<detailtable>
+			create table #tablename (id counter,callid varchar(40),
+			userid varchar(40),thread varchar(100),	host varchar(100),port varchar(20),
+			ts varchar(100),remotecall varchar(200),debuglevel varchar(50),
+			msg memo,costtime float,flowsize float,rowcount float,defcol varchar(100),defcol1 varchar(100),defcol2 varchar(100),server varchar(100),
+			filename varchar(200) ,CONSTRAINT rr PRIMARY KEY (id))
+		</detailtable>
+		<summarytable>
+			create table #tablename (id counter,server varchar(100),callid varchar(40),
+			remoteCallMethod varchar(100),remoteAddr varchar(50),userid varchar(50),
+			thread varchar(100),begintime varchar(40),costtime float,
+			sqlcosttime float,readrownum float,readresulttime float,writetoclienttime float,
+			writetoclientbytes float,readfromclientbytes float,notclosedconnectioncount float ,CONSTRAINT rr PRIMARY KEY (id))
+		</summarytable>
+</nclog>
+<cpulog>
+<cputable>
+	create table #tablename (server varchar(40),host varchar(50),ts varchar(100),cpuid varchar(40),
+	user float,sys varchar(10),wait float,idle float,file varchar(200))
+</cputable>
+</cpulog>
+<memorylog>
+<memorytable>
+	create table #tablename (server varchar(40),host varchar(50),ts varchar(100),total float,
+	free float,pi float,po float,file varchar(200))
+</memorytable>
+</memorylog>
+<jvmlog>
+<jvmtable>
+	create table #tablename (server varchar(40),servername varchar(40),ts varchar(100),max float,
+	total float,free float,ratio varchar(40),msg memo,
+	wcthreadnum float,servicethreadnum float,wcrange varchar(40),respcost varchar(10),
+	file varchar(200))
+</jvmtable>
+</jvmlog>
+<messagelog>
+		<message>
+		create table message(ts varchar(30),snapshotid varchar(30),message memo,
+		service varchar(100),snapshotfile varchar(100),server varchar(50),file varchar(100))
+		</message>
+		<snapshot>
+		create table snapshot(snapshotid varchar(30),filename varchar(100),content memo)
+		</snapshot>
+</messagelog>
+<operatormap>
+	<operator>
+		create table operator(cuserid varchar(30),user_name varchar(50),user_code varchar(50),domain varchar(50))
+	</operator>
+</operatormap>
+</root>
