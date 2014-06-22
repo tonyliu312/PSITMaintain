@@ -2,81 +2,165 @@
 	<root>
 		<resource>
 				<name>进程监控</name>
+				<engname>ProcessMonitor</engname>
 				<servicename>processmonitor</servicename>
 				<displayorder>0</displayorder>
 				<clientcontroller>nc.monitor.ui.process.ProcessController</clientcontroller>
 		</resource>
 				<resource>
 				<name>线程监控</name>
+				<engname>ThreadMonitor</engname>
 				<servicename>mwmonitor</servicename>
 				<displayorder>1</displayorder>
 				<clientcontroller>nc.monitor.ui.mw.MwThreadController</clientcontroller>
 		</resource>
-			<resource>
-				<name>缓存监控</name>
-				<servicename>cache</servicename>
-				<displayorder>2</displayorder>
-				<clientcontroller>nc.monitor.ui.cache.CacheController</clientcontroller>
-		</resource>
 				<resource>
 				<name>数据库</name>
+				<engname>Database</engname>
 				<servicename>dbmonitor</servicename>
 				<displayorder>2</displayorder>
 				<clientcontroller>nc.monitor.ui.db.DBController</clientcontroller>
 		</resource>
+		<resource>
+				<name>客户端监控</name>
+				<engname>ClientMonitor</engname>
+				<servicename>clientmonitor</servicename>
+				<displayorder>3</displayorder>
+				<clientcontroller>nc.monitor.ui.client.ClientController</clientcontroller>
+		</resource>
 				<resource>
 				<name>CPU监控</name>
+				<engname>CPUMonitor</engname>
 				<servicename>cpumonitor</servicename>
 				<displayorder>4</displayorder>
 				<clientcontroller>nc.monitor.ui.cpu.CPUController</clientcontroller>
 		</resource>
 				<resource>
 				<name>内存监控</name>
+				<engname>MemoryMonitor</engname>
 				<servicename>memorymonitor</servicename>
 				<displayorder>5</displayorder>
 				<clientcontroller>nc.monitor.ui.memory.MemoryController</clientcontroller>
 		</resource>
 			<resource>
+				<name>系统监控</name>
+				<engname>SystemMonitor</engname>
+				<servicename>systemmonitor</servicename>
+				<displayorder>4</displayorder>
+				<clientcontroller>nc.monitor.ui.system.SystemController</clientcontroller>
+		    </resource>
+			<resource>
 				<name>日志抽取</name>
+				<engname>LogAnalyze</engname>
 				<servicename>loganalyze</servicename>
 				<displayorder>6</displayorder>
 				<clientcontroller>nc.monitor.ui.loganalyze.LogController</clientcontroller>
 		</resource>
 				<resource>
 				<name>消息中心</name>
+				<engname>MessageCenter</engname>
 				<servicename>messageprocessor</servicename>
 				<displayorder>7</displayorder>
 				<clientcontroller>nc.monitor.ui.message.MessageController</clientcontroller>
 		</resource>
 		<resource>
 				<name>VTUNE</name>
+				<engname>VTUNE</engname>
 				<servicename>vtune</servicename>
 				<displayorder>8</displayorder>
 				<clientcontroller>nc.monitor.ui.vtune.VTuneController</clientcontroller>
 		</resource>
 		<resource>
-				<name>安全设置</name>
-				<servicename>securitycheck</servicename>
+				<name>缓存监控</name>
+				<servicename>cache</servicename>
+				<engname>CacheMonitor</engname>
 				<displayorder>9</displayorder>
+				<clientcontroller>nc.monitor.ui.cache.CacheController</clientcontroller>
+		</resource>
+		<resource>
+				<name>中间件锁</name>
+				<engname>PKLock</engname>
+				<servicename>pklock</servicename>
+				<displayorder>91</displayorder>
+				<clientcontroller>nc.monitor.ui.pklock.PkLockCtroller</clientcontroller>
+		</resource>
+		<resource>
+				<name>安全设置</name>
+				<engname>SecurityConfigration</engname>
+				<servicename>securitycheck</servicename>
+				<displayorder>92</displayorder>
 				<clientcontroller>nc.monitor.ui.security.SecurityController</clientcontroller>
 		</resource>
-		<resource>
-				<name>参数设置</name>
-				<servicename>config</servicename>
-				<displayorder>9</displayorder>
-				<clientcontroller>nc.monitor.ui.conf.ConfController</clientcontroller>
-		</resource>
-		<resource>
-				<name>补丁管理</name>
+						<resource>
+				<name>补丁管理5</name>
+				<engname>PatchManager5</engname>
 				<servicename>patchmanager</servicename>
-				<displayorder>99</displayorder>
+				<displayorder>93</displayorder>
 				<clientcontroller>nc.patchmanager.ui.PatchManagerController</clientcontroller>
 		</resource>
 		<resource>
-				<name>NPR-Central</name>
+				<name>补丁管理6</name>
+				<engname>PatchManager6</engname>
+				<servicename>newpatchmanager</servicename>
+				<displayorder>93</displayorder>
+				<clientcontroller>nc.newpatchmanager.ui.PatchManagerController</clientcontroller>
+		</resource>
+		
+			<resource>
+			<name>权限管理</name>
+			<engname>PrivilegeManager</engname>
+			<servicename>privilegemanager</servicename>
+			<displayorder>93</displayorder>
+			<clientcontroller>nc.monitor.ui.privilege.PrivilegeController</clientcontroller>
+	</resource>
+		
+		<resource>
+				<name>NPR</name>
+				<engname>NPR</engname>
 				<servicename>nprcentral</servicename>
-				<displayorder>999</displayorder>
+				<displayorder>95</displayorder>
 				<clientcontroller>nc.npr.ui.NprCentralController</clientcontroller>
 		</resource>
+		<resource>
+				<name>BPR</name>
+				<engname>BPR</engname>
+				<servicename>bprcentral</servicename>
+				<displayorder>96</displayorder>
+				<clientcontroller>nc.bpr.ui.BPRCentralController</clientcontroller>
+		</resource>
+			<resource>
+				<name>AWR</name>
+				<engname>AWR</engname>
+				<servicename>awrcentral</servicename>
+				<displayorder>96</displayorder>
+				<clientcontroller>nc.awr.ui.AwrController</clientcontroller>
+		</resource>
+		<resource>
+				<name>性能测试</name>
+				<engname>PerformanceTest</engname>
+				<servicename>perftest</servicename>
+				<displayorder>97</displayorder>
+				<clientcontroller>nc.perf.test.ui.PerfTestController</clientcontroller>
+		</resource>
+		<resource>
+				<name>高可用性</name>
+				<engname>MasterHA</engname>
+				<servicename>MasterHA</servicename>
+				<displayorder>98</displayorder>
+				<clientcontroller>nc.ha.master.ui.MasterHAController</clientcontroller>
+		</resource>	
+		<resource>
+				<name>性能测试</name>
+				<engname>NetTest</engname>
+				<servicename>Network</servicename>
+				<displayorder>99</displayorder>
+				<clientcontroller>nc.perf.test.network.ui.PerfTestController</clientcontroller>
+		</resource>	
+		<resource>
+				<name>参数设置</name>
+				<engname>Options</engname>
+				<servicename>config</servicename>
+				<displayorder>999</displayorder>
+				<clientcontroller>nc.monitor.ui.conf.ConfController</clientcontroller>
+		</resource>	
 	</root>
-	

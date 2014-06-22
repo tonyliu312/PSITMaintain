@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<root>
+<domain>
+	<name>local</name>
+	<host>127.0.0.1</host>
+	<port>9999</port>
+	<admin>admin</admin>
+	<password>kcknocfgieejpokd</password>
+</domain>
+
+</root>

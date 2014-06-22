@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bpr>
+	<module-summary>
+		<name>供应链-库存</name>
+	</module-summary>
+	<item>
+		<group>月发生</group>
+		<function>数据在物料上的分布</function>
+		<sql><![CDATA[select /*+BPR*/
+ rn paiming,
+ c count,
+ (select name from org_orgs where pk_org = pk_org_v) org_name,
+ t.cbilltypecode,
+ (select name from bd_stordoc where PK_STORDOC = cwarehouseid) warehouse_name,
+ t.vbatchcode,
+ (select name from bd_material where PK_MATERIAL = cmaterialvid) material_name
+  from (select *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       a.dyearmonth,
+                       a.pk_org_v,
+                       a.cbilltypecode,
+                       a.cwarehouseid,
+                       a.cmaterialvid,
+                       a.vbatchcode
+                  from ic_month_record a
+                 where a.dr = 0
+                 group by a.dyearmonth,
+                          a.pk_org_v,
+                          a.cbilltypecode,
+                          a.cwarehouseid,
+                          a.cmaterialvid,
+                          a.vbatchcode) t
+         where rn <= 50) t
+ order by rn asc
+]]></sql>
+	</item>
+	<item>
+		<group>月发生(签字)</group>
+		<function>数据在物料上的分布</function>
+		<sql><![CDATA[select /*+BPR*/
+ rn paiming,
+ c count,
+ (select name from org_orgs where pk_org = pk_org_v) org_name,
+ t.cbilltypecode,
+ (select name from bd_stordoc where PK_STORDOC = cwarehouseid) warehouse_name,
+ t.vbatchcode,
+ (select name from bd_material where PK_MATERIAL = cmaterialvid) material_name
+  from (select *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       a.dyearmonth,
+                       a.pk_org_v,
+                       a.cbilltypecode,
+                       a.cwarehouseid,
+                       a.cmaterialvid,
+                       a.vbatchcode
+                  from ic_month_recordsign a
+                 where a.dr = 0
+                 group by a.dyearmonth,
+                          a.pk_org_v,
+                          a.cbilltypecode,
+                          a.cwarehouseid,
+                          a.cmaterialvid,
+                          a.vbatchcode) t
+         where rn <= 50) t
+ order by rn asc
+]]></sql>
+	</item>
+	<item>
+		<group>流水账</group>
+		<function>数据在物料上的分布</function>
+		<sql><![CDATA[select /*+BPR*/
+ rn paiming,
+ c count,
+ (select name from org_orgs where pk_org = pk_org_v) org_name,
+ t.cbilltypecode,
+ (select name from bd_stordoc where PK_STORDOC = cwarehouseid) warehouse_name,
+ t.vbatchcode,
+ (select name from bd_material where PK_MATERIAL = cmaterialvid) material_name
+  from (select *
+          from (select row_number() over(order by count(1) desc) rn,
+                       count(1) c,
+                       a.pk_org_v,
+                       a.cbilltypecode,
+                       a.cwarehouseid,
+                       a.cmaterialvid,
+                       a.vbatchcode
+                  from ic_flow a
+                 where a.dr = 0
+                 group by  
+                          a.pk_org_v,
+                          a.cbilltypecode,
+                          a.cwarehouseid,
+                          a.cmaterialvid,
+                          a.vbatchcode) t
+         where rn <= 50) t
+ order by rn asc]]></sql>
+	</item>
+	<item>
+		<group>流水账</group>
+		<function>总数据量</function>
+		<sql><![CDATA[select count(1) 数据量 from ic_flow a]]></sql>
+	</item>
+		<item>
+		<group>月结</group>
+		<function>总数据量</function>
+		<sql><![CDATA[SELECT * FROM IC_MONTH_EXEC WHERE ROWNUM<1000]]></sql>
+	</item>
+</bpr>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<logdb>
+		<dbtype>oracle</dbtype>
+		<connectstr>jdbc:oracle:thin:@127.0.0.1:1521:ora10g</connectstr>
+		<username>nc55</username>
+		<password>nc55</password>
+		<jdbcdriver>oracle.jdbc.OracleDriver</jdbcdriver>
+</logdb>
+<systable>
+	<tableexist>select table_name from user_tables where table_name='#tablename'</tableexist>
+</systable>
+<nclog>
+		<detailtable>
+			create table #tablename(callid varchar(40),userid varchar(40),thread varchar(100),host varchar(100),port varchar(20),ts varchar(100),remotecall varchar(200),debuglevel varchar(50),msg varchar2(4000),costtime float,flowsize float,rowcount float,defcol varchar(100),defcol1 varchar(100),defcol2 varchar(100),server varchar(100),filename varchar(200),def10 char(1))
+		</detailtable>
+		<summarytable>
+			create table #tablename (server varchar(100),callid varchar(40),remoteCallMethod varchar(100),remoteAddr varchar(50),userid varchar(50),thread varchar(100),begintime varchar(40),costtime float,sqlcosttime float,readrownum float,readresulttime float,writetoclienttime float,writetoclientbytes float,readfromclientbytes float,notclosedconnectioncount float)
+		</summarytable>
+		<clientlog>
+			create table #tablename(callid varchar(40),msg varchar(4000))
+		</clientlog>
+</nclog>
+<cpulog>
+<cputable>
+	create table #tablename (server varchar(40),host varchar(50),ts varchar(100),cpuid varchar(40),
+	user float,sys varchar(10),wait float,idle float,file varchar(200))
+</cputable>
+</cpulog>
+<memorylog>
+<memorytable>
+	create table #tablename (server varchar(40),host varchar(50),ts varchar(100),total float,
+	free float,pi float,po float,file varchar(200))
+</memorytable>
+</memorylog>
+<jvmlog>
+<jvmtable>
+	create table #tablename (server varchar(40),servername varchar(40),ts varchar(100),max float,
+	total float,free float,ratio varchar(40),msg memo,
+	wcthreadnum float,servicethreadnum float,wcrange varchar(40),
+	file varchar(200))
+</jvmtable>
+</jvmlog>
+<messagelog>
+		<message>
+		create table message(ts varchar(30),snapshotid varchar(30),message memo,
+		service varchar(100),snapshotfile varchar(100))
+		</message>
+		<snapshot>
+		create table snapshot(snapshotid varchar(30),filename varchar(100),content memo)
+		</snapshot>
+</messagelog>
+<operatormap>
+	<operator>
+		create table operator(cuserid varchar(30),user_name varchar(50),user_code varchar(50),domain varchar(50))
+	</operator>
+</operatormap>
+</root>

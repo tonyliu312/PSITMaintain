@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- edited with XMLSpy v2011 (http://www.altova.com) by jinyongheng123 (jinyongheng123) -->
 <root>
 	<plugin>
 		<caption>环境信息</caption>
@@ -90,7 +89,6 @@
 		<format>chart</format>
 		<chart-type>LineChart</chart-type>
 		<chart-title>Database workload</chart-title>
-		<chart-width>1024</chart-width>
 		<chart-high>480</chart-high>
 		<line-name>Active sessions</line-name>
 		<x-field>ts</x-field>
@@ -109,6 +107,23 @@
 		<datasrc>nc.mw</datasrc>
 		<format>table</format>
 		<impl-class>nc.npr.service.plugin.SQLExecuteSummaryImpl</impl-class>
+	</plugin>
+		<plugin>
+		<caption>系统监控</caption>
+		<show>Y</show>
+		<show-order>86</show-order>
+		<show-level>1</show-level>
+		<datasrc>nmc.systemmonitor</datasrc>
+		<format>chart</format>
+		<chart-type>LineChart</chart-type>
+		<chart-title>System monitor</chart-title>
+		<chart-width>2048</chart-width>
+		<chart-high>512</chart-high>
+		<x-field>ts</x-field>
+		<sys-interval>5</sys-interval>
+		<!--统计时格以秒为单位，5秒的倍数，最小为5秒-->
+		<time-bucket>3600</time-bucket>
+		<impl-class>nc.npr.service.plugin.SystemMonitorPluginImpl</impl-class>
 	</plugin>
 	<plugin>
 		<caption>在线用户统计信息</caption>
@@ -147,51 +162,55 @@
 		<impl-class>nc.npr.service.plugin.OnlineUserTableImpl</impl-class>
 	</plugin>
 	<plugin>
-		<caption>Top10统计</caption>
+		<caption>TopN统计</caption>
 		<show>Y</show>
 		<show-order>120</show-order>
 		<show-level>0</show-level>
 		<datasrc>data_src_null</datasrc>
 	</plugin>
 	<plugin>
-		<caption>最耗时的远程调用Top10</caption>
+		<caption>最耗时的远程调用TopN</caption>
 		<show>Y</show>
 		<show-order>130</show-order>
 		<show-level>1</show-level>
 		<datasrc>nc.mw</datasrc>
 		<format>table</format>
+		<filter-file>最耗时的远程调用TopN</filter-file>
 		<impl-class>nc.npr.service.plugin.RemoteCallCostTimeTop10</impl-class>
 	</plugin>
 	<plugin>
-		<caption>网络上行流量最大的远程调用Top10</caption>
+		<caption>网络上行流量最大的远程调用TopN</caption>
 		<show>Y</show>
 		<show-order>140</show-order>
 		<show-level>1</show-level>
 		<datasrc>nc.mw</datasrc>
-		<format>table</format>
+		<format>table</format>		
+		<filter-file>网络上行流量最大的远程调用TopN</filter-file>
 		<impl-class>nc.npr.service.plugin.RemoteCallWriteTrafficTop10</impl-class>
 	</plugin>
 	<plugin>
-		<caption>网络下行流量最大的远程调用Top10</caption>
+		<caption>网络下行流量最大的远程调用TopN</caption>
 		<show>Y</show>
 		<show-order>150</show-order>
 		<show-level>1</show-level>
 		<datasrc>nc.mw</datasrc>
 		<format>table</format>
+		<filter-file>网络下行流量最大的远程调用TopN</filter-file>
 		<impl-class>nc.npr.service.plugin.RemoteCallReadTrafficTop10</impl-class>
 	</plugin>
 	<plugin>
-		<caption>读取结果集最多的远程调用Top10</caption>
+		<caption>读取结果集最多的远程调用TopN</caption>
 		<show>Y</show>
 		<show-order>160</show-order>
 		<show-level>1</show-level>
 		<datasrc>nc.mw</datasrc>
 		<format>table</format>
+		<filter-file>读取结果集最多的远程调用TopN</filter-file>
 		<impl-class>nc.npr.service.plugin.RemoteCallResultTop10</impl-class>
 	</plugin>
 	<!--
 	<plugin>
-		<caption>执行次数最多的操作Top10</caption>
+		<caption>执行次数最多的操作TopN</caption>
 		<show>Y</show>
 		<show-order>170</show-order>
 		<show-level>1</show-level>
@@ -201,40 +220,64 @@
 	</plugin>
 	-->
 	<plugin>
-		<caption>最耗时的SQL Top10</caption>
+		<caption>最耗时的SQLTopN</caption>
 		<show>Y</show>
 		<show-order>180</show-order>
 		<show-level>1</show-level>
 		<datasrc>nc.warningsql</datasrc>
 		<format>table</format>
+		<filter-file>最耗时的SQLTopN</filter-file>
 		<impl-class>nc.npr.service.plugin.SQLCostTimeTop10</impl-class>
 	</plugin>
 	<plugin>
-		<caption>结果集最多的SQL Top10</caption>
+		<caption>结果集最多的SQLTopN</caption>
 		<show>Y</show>
 		<show-order>190</show-order>
 		<show-level>1</show-level>
 		<datasrc>nc.warningsql</datasrc>
 		<format>table</format>
+		<filter-file>结果集最多的SQLTopN</filter-file>
 		<impl-class>nc.npr.service.plugin.SQLResultTop10</impl-class>
 	</plugin>
 	<plugin>
-		<caption>对Master请求最多的远程调用Top10</caption>
+		<caption>SQL数量最多的远程调用TopN</caption>
 		<show>Y</show>
 		<show-order>200</show-order>
 		<show-level>1</show-level>
-		<datasrc>nc.master.mw</datasrc>
+		<datasrc>nc.mw</datasrc>
 		<format>table</format>
-		<impl-class>nc.npr.service.plugin.RequestMasterTop10</impl-class>
+		<filter-file>SQL数量最多的远程调用TopN</filter-file>
+		<impl-class>nc.npr.service.plugin.RemoteCallSQLNumsTop10</impl-class>
 	</plugin>
 	<plugin>
-		<caption>SQL数量最多的远程调用Top10</caption>
+		<caption>Master服务使用频率最高的远程调用TopN</caption>
 		<show>Y</show>
 		<show-order>210</show-order>
 		<show-level>1</show-level>
 		<datasrc>nc.mw</datasrc>
 		<format>table</format>
-		<impl-class>nc.npr.service.plugin.RemoteCallSQLNumsTop10</impl-class>
+		<filter-file>对Master请求最多的远程调用TopN</filter-file>
+		<impl-class>nc.npr.service.plugin.RequestMasterTop10</impl-class>
+	</plugin>
+	<plugin>
+		<caption>对Master请求最多的远程调用TopN</caption>
+		<show>Y</show>
+		<show-order>210</show-order>
+		<show-level>1</show-level>
+		<datasrc>nc.mw</datasrc>
+		<format>table</format>
+		<filter-file>对Master请求最多的远程调用TopN</filter-file>
+		<impl-class>nc.npr.service.plugin.CallMasterNumsTop10</impl-class>
+	</plugin>
+	<plugin>
+		<caption>数据库连接次数最多的远程调用TopN</caption>
+		<show>Y</show>
+		<show-order>210</show-order>
+		<show-level>1</show-level>
+		<datasrc>nc.mw</datasrc>
+		<format>table</format>
+		<filter-file>数据库连接次数最多的远程调用TopN</filter-file>
+		<impl-class>nc.npr.service.plugin.CallDbNumsTop10</impl-class>
 	</plugin>
 	<plugin>
 		<caption>错误信息统计</caption>
@@ -244,21 +287,23 @@
 		<datasrc>data_src_null</datasrc>
 	</plugin>
 	<plugin>
-		<caption>怀疑连接泄露的远程调用统计</caption>
+		<caption>连接泄露的远程调用统计</caption>
 		<show>Y</show>
 		<show-order>230</show-order>
 		<show-level>1</show-level>
 		<datasrc>nc.mw</datasrc>
 		<format>table</format>
+		<filter-file>连接泄露的远程调用统计</filter-file>
 		<impl-class>nc.npr.service.plugin.RemoteCallConnNotClosePluginImpl</impl-class>
 	</plugin>
 	<plugin>
-		<caption>远程调用次数超标的操作</caption>
+		<caption>怀疑远程调用次数超标的操作</caption>
 		<show>Y</show>
 		<show-order>240</show-order>
 		<show-level>1</show-level>
 		<datasrc>nc.mw</datasrc>
 		<format>table</format>
+		<filter-file>怀疑远程调用次数超标的操作</filter-file>
 		<impl-class>nc.npr.service.plugin.RemoteCallTimesOverLimit</impl-class>
 	</plugin>
 	<plugin>
@@ -268,6 +313,7 @@
 		<show-level>1</show-level>
 		<datasrc>nc.mw</datasrc>
 		<format>table</format>
+		<filter-file>SQL数量超标的远程调用统计</filter-file>
 		<impl-class>nc.npr.service.plugin.RemoteCallSQLTimesOverLimit</impl-class>
 	</plugin>
 	<plugin>
@@ -277,6 +323,7 @@
 		<show-level>1</show-level>
 		<datasrc>nc.mw</datasrc>
 		<format>table</format>
+		<filter-file>上行或下行流量超过1M的远程调用统计</filter-file>
 		<impl-class>nc.npr.service.plugin.ReadOrWriteOver1MImpl</impl-class>
 	</plugin>
 	<plugin>
@@ -362,6 +409,7 @@
 		<y-tital>Threads</y-tital>
 		<impl-class>nc.npr.service.plugin.JvmWebThreadChartImpl</impl-class>
 	</plugin>
+	
 	<plugin>
 		<caption>消息快照</caption>
 		<show>Y</show>

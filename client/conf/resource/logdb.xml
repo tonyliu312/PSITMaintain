@@ -20,10 +20,10 @@
 		</detailtable>
 		<summarytable>
 			create table #tablename (id counter,server varchar(100),callid varchar(40),
-			remoteCallMethod varchar(100),remoteAddr varchar(50),userid varchar(50),
-			thread varchar(100),begintime varchar(40),costtime float,
+			remoteCallMethod varchar(100),busiaction varchar(100),remoteAddr varchar(50),userid varchar(50),
+			thread varchar(100),begintime varchar(40),costtime float,sqlnum float,
 			sqlcosttime float,readrownum float,readresulttime float,writetoclienttime float,
-			writetoclientbytes float,readfromclientbytes float,notclosedconnectioncount float ,CONSTRAINT rr PRIMARY KEY (id))
+			writetoclientbytes float,readfromclienttime float,readfromclientbytes float,notclosedconnectioncount float,cc float,cmc float,CONSTRAINT rr PRIMARY KEY (id))
 		</summarytable>
 </nclog>
 <cpulog>
@@ -42,17 +42,30 @@
 <jvmtable>
 	create table #tablename (server varchar(40),servername varchar(40),ts varchar(100),max float,
 	total float,free float,ratio varchar(40),msg memo,
-	wcthreadnum float,servicethreadnum float,wcrange varchar(40),respcost varchar(10),
+	wcthreadnum float,servicethreadnum float,wcrange varchar(40),respcost varchar(10),throughput float,
 	file varchar(200))
 </jvmtable>
 </jvmlog>
+
+<clientlog>
+	<onlineusertable>
+		create table #tablename (usercount float,ts varchar(100))
+	</onlineusertable>
+	<clienttable>
+		create table #tablename (usercode varchar(40),userid varchar(40),username varchar(40),clientip varchar(40), clienthost varchar(40), iscompress varchar(40), usedcache varchar(40), 
+		isie varchar(40), jvmtotal float,jvmused float,network_getconn float,network_getconn_max float,network_getconn_min float,
+		network_write float, network_write_max float,network_write_min float,network_read float,network_read_max float,network_read_min float,
+		cpu float,ts varchar(100))
+	</clienttable>
+</clientlog>
+
 <messagelog>
 		<message>
 		create table message(ts varchar(30),snapshotid varchar(30),message memo,
 		service varchar(100),snapshotfile varchar(100),server varchar(50),file varchar(100))
 		</message>
 		<snapshot>
-		create table snapshot(snapshotid varchar(30),filename varchar(100),content memo)
+		create table snapshot(snapshotid varchar(30),filename varchar(200),content memo, id counter)
 		</snapshot>
 </messagelog>
 <operatormap>

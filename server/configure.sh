@@ -1,5 +1,5 @@
-if [ "$JAVA_HOME" = "" ] ; then
-        echo "You must set JAVA_HOME env_var first."
+if [ "$JAVA_HOME"  = "" ] ; then
+        echo "You  must set  JAVA_HOME env_var first."
         exit
 fi
 

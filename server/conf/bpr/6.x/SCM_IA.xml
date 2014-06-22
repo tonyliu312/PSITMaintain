@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bpr> 
+    <module-summary>
+    	<name>供应链-存货核算</name>
+    </module-summary>
+	
+	<!-- 成本域数据量 -->
+	<item> 
+		<group>成本域数据量</group>
+		<function>总量</function>
+		<sql>select count(1) 数量 from org_costregion where dr=0</sql>
+    </item>
+	<item> 
+		<group>成本域数据量</group>
+		<function>公司（财务组织）</function>
+		<sql>select a.code 财务组织编码,a.name 财务组织名称,b.total 对应成本域个数 from org_financeorg a inner join  (select pk_org,count(1) total from org_costregion where dr=0 group by pk_org) b on a.pk_financeorg=b.pk_org order by a.code</sql>
+	</item>
+   
+	<!-- 单据明细数据量 -->
+	<item>
+		<group>单据明细数据量</group>
+		<function>总量</function>
+		<sql>select count(1) 数量 from ia_detailledger where dr=0</sql>
+	</item>
+	<item>
+		<group>单据明细数据量</group>
+		<function>成本域</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称, b.total 数量 from org_costregion a inner join (select pk_org,count(1) total from ia_detailledger where dr=0 group by pk_org) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>单据明细数据量</group>
+		<function>会计期间</function>
+		<sql>select caccountperiod 会计期间,count(1) 数量 from ia_detailledger where dr=0 group by caccountperiod order by caccountperiod</sql>
+	</item>
+	<item>
+		<group>单据明细数据量</group>
+		<function>单据类型</function>
+		<sql>select a.billtypename 单据类型,b.total 数量 from bd_billtype a inner join (select cbilltypecode,count(1) total from ia_detailledger where dr=0 group by cbilltypecode order by cbilltypecode) b on a.pk_billtypecode=b.cbilltypecode</sql>
+	</item>
+	<item>
+		<group>单据明细数据量</group>
+		<function>计价方式</function>
+		<sql>select a.name 计价方式,b.total 数量 from md_enumvalue a inner join (select fpricemodeflag,count(1) total from ia_detailledger where dr=0 group by fpricemodeflag order by fpricemodeflag) b on a.value=b.fpricemodeflag where a.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5'</sql>
+	</item>
+	<item>
+		<group>单据明细数据量</group>
+		<function>成本域+会计期间</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,count(1) total from ia_detailledger where dr=0 group by pk_org,caccountperiod order by pk_org,caccountperiod) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>单据明细数据量</group>
+		<function>成本域+会计期间+单据类型</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间,c.billtypename 单据类型, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,cbilltypecode,count(1) total from ia_detailledger where dr=0 group by pk_org,caccountperiod,cbilltypecode ) b on a.pk_costregion = b.pk_org inner join bd_billtype c on b.cbilltypecode=c.pk_billtypecode order by a.code,caccountperiod,cbilltypecode</sql>
+	</item>
+	<item>
+		<group>单据明细数据量</group>
+		<function>成本域+会计期间+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,fpricemodeflag,count(1) total from ia_detailledger where dr=0  group by pk_org,caccountperiod,fpricemodeflag order by pk_org,caccountperiod,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code,caccountperiod</sql>
+	</item>
+	<item>
+		<group>单据明细数据量</group>
+		<function>成本域+单据类型</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.billtypename 单据类型, b.total 数量 from org_costregion a inner join (select pk_org,cbilltypecode,count(1) total from ia_detailledger where dr=0 group by pk_org,cbilltypecode ) b on a.pk_costregion = b.pk_org inner join bd_billtype c on b.cbilltypecode=c.pk_billtypecode order by a.code,cbilltypecode</sql>
+	</item>
+	<item>
+		<group>单据明细数据量</group>
+		<function>成本域+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,fpricemodeflag,count(1) total from ia_detailledger where dr=0 group by pk_org,fpricemodeflag order by pk_org,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code</sql>
+	</item>
+	
+	<!-- 历史单据明细数据量 -->
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>总量</function>
+		<sql>select count(1) 数量 from ia_hisdetailledger where dr=0</sql>
+	</item>
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>成本域</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称, b.total 数量 from org_costregion a inner join (select pk_org,count(1) total from ia_hisdetailledger where dr=0 group by pk_org) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>会计期间</function>
+		<sql>select caccountperiod 会计期间,count(1) 数量 from ia_hisdetailledger where dr=0 group by caccountperiod order by caccountperiod</sql>
+	</item>
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>单据类型</function>
+		<sql>select a.billtypename 单据类型,b.total 数量 from bd_billtype a inner join (select cbilltypecode,count(1) total from ia_hisdetailledger where dr=0 group by cbilltypecode order by cbilltypecode) b on a.pk_billtypecode=b.cbilltypecode</sql>
+	</item>
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>计价方式</function>
+		<sql>select a.name 计价方式,b.total 数量 from md_enumvalue a inner join (select fpricemodeflag,count(1) total from ia_hisdetailledger where dr=0 group by fpricemodeflag order by fpricemodeflag) b on a.value=b.fpricemodeflag where a.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5'</sql>
+	</item>
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>成本域+会计期间</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,count(1) total from ia_hisdetailledger where dr=0 group by pk_org,caccountperiod order by pk_org,caccountperiod) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>成本域+会计期间+单据类型</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间,c.billtypename 单据类型, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,cbilltypecode,count(1) total from ia_hisdetailledger where dr=0 group by pk_org,caccountperiod,cbilltypecode ) b on a.pk_costregion = b.pk_org inner join bd_billtype c on b.cbilltypecode=c.pk_billtypecode order by a.code,caccountperiod,cbilltypecode</sql>
+	</item>
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>成本域+会计期间+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,fpricemodeflag,count(1) total from ia_hisdetailledger where dr=0  group by pk_org,caccountperiod,fpricemodeflag order by pk_org,caccountperiod,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code,caccountperiod</sql>
+	</item>
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>成本域+单据类型</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.billtypename 单据类型, b.total 数量 from org_costregion a inner join (select pk_org,cbilltypecode,count(1) total from ia_hisdetailledger where dr=0 group by pk_org,cbilltypecode ) b on a.pk_costregion = b.pk_org inner join bd_billtype c on b.cbilltypecode=c.pk_billtypecode order by a.code,cbilltypecode</sql>
+	</item>
+	<item>
+		<group>历史单据明细数据量</group>
+		<function>成本域+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,fpricemodeflag,count(1) total from ia_hisdetailledger where dr=0 group by pk_org,fpricemodeflag order by pk_org,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code</sql>
+	</item>
+	
+	<!-- 存货总账数据量 -->
+	<item>
+		<group>存货总账数据量</group>
+		<function>总量</function>
+		<sql>select count(1) 数量 from ia_generalnab where dr=0</sql>
+	</item>
+	<item>
+		<group>存货总账数据量</group>
+		<function>成本域</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称, b.total 数量 from org_costregion a inner join (select pk_org,count(1) total from ia_generalnab where dr=0 group by pk_org) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>存货总账数据量</group>
+		<function>计价方式</function>
+		<sql>select a.name 计价方式,b.total 数量 from md_enumvalue a inner join (select fpricemodeflag,count(1) total from ia_generalnab where dr=0 group by fpricemodeflag order by fpricemodeflag) b on a.value=b.fpricemodeflag where a.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5'</sql>
+	</item>
+	<item>
+		<group>存货总账数据量</group>
+		<function>成本域+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,fpricemodeflag,count(1) total from ia_generalnab where dr=0 group by pk_org,fpricemodeflag order by pk_org,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code</sql>
+	</item>
+	
+	<!-- 存货总账月纪录数据量 -->
+	<item>
+		<group>存货总账月纪录数据量</group>
+		<function>总量</function>
+		<sql>select count(1) 数量 from ia_monthnab where dr=0</sql>
+	</item>
+	<item>
+		<group>存货总账月纪录数据量</group>
+		<function>成本域</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称, b.total 数量 from org_costregion a inner join (select pk_org,count(1) total from ia_monthnab where dr=0 group by pk_org) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>存货总账月纪录数据量</group>
+		<function>会计期间</function>
+		<sql>select caccountperiod 会计期间,count(1) 数量 from ia_monthnab where dr=0 group by caccountperiod order by caccountperiod</sql>
+	</item>
+	<item>
+		<group>存货总账月纪录数据量</group>
+		<function>计价方式</function>
+		<sql>select a.name 计价方式,b.total 数量 from md_enumvalue a inner join (select fpricemodeflag,count(1) total from ia_monthnab where dr=0 group by fpricemodeflag order by fpricemodeflag) b on a.value=b.fpricemodeflag where a.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5'</sql>
+	</item>
+	<item>
+		<group>存货总账月纪录数据量</group>
+		<function>成本域+会计期间</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,count(1) total from ia_monthnab where dr=0 group by pk_org,caccountperiod order by pk_org,caccountperiod) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>存货总账月纪录数据量</group>
+		<function>成本域+会计期间+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,fpricemodeflag,count(1) total from ia_monthnab where dr=0  group by pk_org,caccountperiod,fpricemodeflag order by pk_org,caccountperiod,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code,caccountperiod</sql>
+	</item>
+	<item>
+		<group>存货总账月纪录数据量</group>
+		<function>成本域+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,fpricemodeflag,count(1) total from ia_monthnab where dr=0 group by pk_org,fpricemodeflag order by pk_org,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code</sql>
+	</item>
+	<!-- 月入库数据量 -->
+	<item>
+		<group>月入库数据量</group>
+		<function>总量</function>
+		<sql>select count(1) 数量 from ia_monthin where dr=0</sql>
+	</item>
+	<item>
+		<group>月入库数据量</group>
+		<function>成本域</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称, b.total 数量 from org_costregion a inner join (select pk_org,count(1) total from ia_monthin where dr=0 group by pk_org) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>月入库数据量</group>
+		<function>会计期间</function>
+		<sql>select caccountperiod 会计期间,count(1) 数量 from ia_monthin where dr=0 group by caccountperiod order by caccountperiod</sql>
+	</item>
+	<item>
+		<group>月入库数据量</group>
+		<function>计价方式</function>
+		<sql>select a.name 计价方式,b.total 数量 from md_enumvalue a inner join (select fpricemodeflag,count(1) total from ia_monthin where dr=0 group by fpricemodeflag order by fpricemodeflag) b on a.value=b.fpricemodeflag where a.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5'</sql>
+	</item>
+	<item>
+		<group>月入库数据量</group>
+		<function>成本域+会计期间</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,count(1) total from ia_monthin where dr=0 group by pk_org,caccountperiod order by pk_org,caccountperiod) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>月入库数据量</group>
+		<function>成本域+会计期间+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,fpricemodeflag,count(1) total from ia_monthin where dr=0  group by pk_org,caccountperiod,fpricemodeflag order by pk_org,caccountperiod,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code,caccountperiod</sql>
+	</item>
+	<item>
+		<group>月入库数据量</group>
+		<function>成本域+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,fpricemodeflag,count(1) total from ia_monthin where dr=0 group by pk_org,fpricemodeflag order by pk_org,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code</sql>
+	</item>
+	<!-- 月出库数据量 -->
+	<item>
+		<group>月出库数据量</group>
+		<function>总量</function>
+		<sql>select count(1) 数量 from ia_monthout where dr=0</sql>
+	</item>
+	<item>
+		<group>月出库数据量</group>
+		<function>成本域</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称, b.total 数量 from org_costregion a inner join (select pk_org,count(1) total from ia_monthout where dr=0 group by pk_org) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>月出库数据量</group>
+		<function>会计期间</function>
+		<sql>select caccountperiod 会计期间,count(1) 数量 from ia_monthout where dr=0 group by caccountperiod order by caccountperiod</sql>
+	</item>
+	<item>
+		<group>月出库数据量</group>
+		<function>计价方式</function>
+		<sql>select a.name 计价方式,b.total 数量 from md_enumvalue a inner join (select fpricemodeflag,count(1) total from ia_monthout where dr=0 group by fpricemodeflag order by fpricemodeflag) b on a.value=b.fpricemodeflag where a.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5'</sql>
+	</item>
+	<item>
+		<group>月出库数据量</group>
+		<function>成本域+会计期间</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,count(1) total from ia_monthout where dr=0 group by pk_org,caccountperiod order by pk_org,caccountperiod) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>月出库数据量</group>
+		<function>成本域+会计期间+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,fpricemodeflag,count(1) total from ia_monthout where dr=0  group by pk_org,caccountperiod,fpricemodeflag order by pk_org,caccountperiod,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code,caccountperiod</sql>
+	</item>
+	<item>
+		<group>月出库数据量</group>
+		<function>成本域+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,fpricemodeflag,count(1) total from ia_monthout where dr=0 group by pk_org,fpricemodeflag order by pk_org,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code</sql>
+	</item>
+	<!-- 期间结存数据量 -->
+	<item>
+		<group>期间结存数据量</group>
+		<function>总量</function>
+		<sql>select count(1) 数量 from ia_periodnab where dr=0</sql>
+	</item>
+	<item>
+		<group>期间结存数据量</group>
+		<function>成本域</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称, b.total 数量 from org_costregion a inner join (select pk_org,count(1) total from ia_periodnab where dr=0 group by pk_org) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>期间结存数据量</group>
+		<function>会计期间</function>
+		<sql>select caccountperiod 会计期间,count(1) 数量 from ia_periodnab where dr=0 group by caccountperiod order by caccountperiod</sql>
+	</item>
+	<item>
+		<group>期间结存数据量</group>
+		<function>计价方式</function>
+		<sql>select a.name 计价方式,b.total 数量 from md_enumvalue a inner join (select fpricemodeflag,count(1) total from ia_periodnab where dr=0 group by fpricemodeflag order by fpricemodeflag) b on a.value=b.fpricemodeflag where a.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5'</sql>
+	</item>
+	<item>
+		<group>期间结存数据量</group>
+		<function>成本域+会计期间</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,count(1) total from ia_periodnab where dr=0 group by pk_org,caccountperiod order by pk_org,caccountperiod) b on a.pk_costregion = b.pk_org order by a.code</sql>
+	</item>
+	<item>
+		<group>期间结存数据量</group>
+		<function>成本域+会计期间+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,caccountperiod 会计期间,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,caccountperiod,fpricemodeflag,count(1) total from ia_periodnab where dr=0  group by pk_org,caccountperiod,fpricemodeflag order by pk_org,caccountperiod,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code,caccountperiod</sql>
+	</item>
+	<item>
+		<group>期间结存数据量</group>
+		<function>成本域+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_org,fpricemodeflag,count(1) total from ia_periodnab where dr=0 group by pk_org,fpricemodeflag order by pk_org,fpricemodeflag) b on a.pk_costregion = b.pk_org inner join md_enumvalue c on b.fpricemodeflag=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code</sql>
+	</item>
+
+	<!-- 物料成本信息数据量 -->
+	<item>
+		<group>物料成本信息数据量</group>
+		<function>总量</function>
+		<sql>select count(1) 数量 from bd_materialcostmod where dr=0</sql>
+	</item>
+	<item>
+		<group>物料成本信息数据量</group>
+		<function>成本域</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称, b.total 数量 from org_costregion a inner join (select pk_costregion,count(1) total from bd_materialcostmod where dr=0 group by pk_costregion) b on a.pk_costregion = b.pk_costregion order by a.code</sql>
+	</item>
+	<item>
+		<group>物料成本信息数据量</group>
+		<function>计价方式</function>
+		<sql>select a.name 计价方式,b.total 数量 from md_enumvalue a inner join (select costmode,count(1) total from bd_materialcostmod where dr=0 group by costmode order by costmode) b on a.value=b.costmode where a.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5'</sql>
+	</item>
+	<item>
+		<group>物料成本信息数据量</group>
+		<function>成本域+计价方式</function>
+		<sql>select a.code 成本域编码, a.name 成本域名称,c.name 计价方式, b.total 数量 from org_costregion a inner join (select pk_costregion,costmode,count(1) total from bd_materialcostmod where dr=0  group by pk_costregion,costmode order by pk_costregion,costmode) b on a.pk_costregion = b.pk_costregion inner join md_enumvalue c on b.costmode=c.value where c.id='8fab9d06-7746-47fb-ac23-2cc3077f10c5' order by a.code</sql>
+	</item>
+</bpr>
