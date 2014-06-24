@@ -45,7 +45,13 @@
 	<classpathentry kind="lib" path="server/lib/xml.jar"/>
 	<classpathentry kind="lib" path="server/lib/zip.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="server/lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="server/lib/json-lib-2.4-jdk15.jar" sourcepath="server/lib/json-lib-2.4-jdk15-sources.jar"/>
 	<classpathentry kind="lib" path="server/lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="server/lib/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="server/lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="server/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="server/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="server/lib/json-lib-2.4-jdk15-javadoc.jar"/>
+	<classpathentry kind="lib" path="server/lib/json-lib-2.4-jdk15-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

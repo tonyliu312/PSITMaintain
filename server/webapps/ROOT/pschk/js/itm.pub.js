@@ -1,23 +1,16 @@
 var service_name = "service_name";
 var method = "method";
 var param = "param";
+var pscall = "/pscall";
 
-function remoteCall(s, m, p) {
+function ajson(s, m, p) {
 
-    var jsonStr = [{
-        service_name : s
-    }, {
-        method : m
-    }, {
+    var jsonStr = {
+        service_name : s,
+        method : m,
         param : p
-    }];
-
-    $.getJSON("/pscall", jsonStr, null);
-
-}
-
-function remoteCallback(data) {
-
-    return data;
+    };
+    
+    return jsonStr;
 
 }
