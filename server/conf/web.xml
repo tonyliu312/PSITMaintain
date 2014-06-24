@@ -28,6 +28,15 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+  <servlet>
+     <servlet-name>PSITMServlet</servlet-name>
+     <servlet-class>uap.ps.itm.pub.servlet.PSITMServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>PSITMServlet</servlet-name>
+     <url-pattern>/pscall</url-pattern>
+  </servlet-mapping>
 
 
 
