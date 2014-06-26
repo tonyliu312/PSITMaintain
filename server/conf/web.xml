@@ -30,7 +30,7 @@
 
   <servlet>
      <servlet-name>PSITMServlet</servlet-name>
-     <servlet-class>uap.ps.itm.pub.servlet.PSITMServlet</servlet-class>
+     <servlet-class>nc.npr..pub.servlet.PSITMServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>

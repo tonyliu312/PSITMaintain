@@ -25,7 +25,6 @@
 	<classpathentry kind="lib" path="server/lib/jasper-jdt.jar"/>
 	<classpathentry kind="lib" path="server/lib/jasper.jar"/>
 	<classpathentry kind="lib" path="server/lib/jsp-api.jar"/>
-	<classpathentry kind="lib" path="server/lib/monitor.jar"/>
 	<classpathentry kind="lib" path="server/lib/mx.jar"/>
 	<classpathentry kind="lib" path="server/lib/ncdepend.jar"/>
 	<classpathentry kind="lib" path="server/lib/ojdbc14.jar"/>
