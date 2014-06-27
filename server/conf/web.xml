@@ -27,10 +27,14 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    
+    <listener>
+		<listener-class>uap.ps.itm.monitor.service.center.WebStartupHook</listener-class>
+	</listener>
 
   <servlet>
      <servlet-name>PSITMServlet</servlet-name>
-     <servlet-class>nc.npr..pub.servlet.PSITMServlet</servlet-class>
+     <servlet-class>uap.ps.itm.pub.servlet.PSITMServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>

@@ -1,8 +1,8 @@
 function buildNPR(){
-    $.getJSON(pscall,ajson("NPR","buildNPR","haha"),callback);
+    $.getJSON(pscall,ajson("itmreport","buildNPR","all"),callbackNPR);
 }
 
-function callback(data){
+function callbackNPR(data){
     // var obj = JSON.parse(data);
     var str = data.result_value;
     var firstTR = $("#histab tr").eq(0);

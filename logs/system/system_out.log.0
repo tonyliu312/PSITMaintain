@@ -1,2632 +1,382 @@
 
-2013-12-24 08:59:32 java.io.FileNotFoundException: ./logs/npr/nprlog.idx.log (No such file or directory)
+2014-06-27 14:41:10 java.lang.NullPointerException
 
-2013-12-24 08:59:32 	at java.io.FileInputStream.open(Native Method)
+2014-06-27 14:41:10 	at java.io.FileInputStream.<init>(FileInputStream.java:116)
 
-2013-12-24 08:59:32 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+2014-06-27 14:41:10 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
 
-2013-12-24 08:59:32 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+2014-06-27 14:41:10 	at uap.ps.itm.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
 
-2013-12-24 08:59:32 	at nc.monitor.pub.Text2HashVO.convertToVO(Text2HashVO.java:38)
+2014-06-27 14:41:10 	at uap.ps.itm.monitor.service.center.ServerEnv.loadServerCfg(ServerEnv.java:96)
 
-2013-12-24 08:59:32 	at nc.npr.service.NPRCentral.getNprlog(NPRCentral.java:291)
+2014-06-27 14:41:10 	at uap.ps.itm.monitor.service.center.ServerEnv.<init>(ServerEnv.java:76)
 
-2013-12-24 08:59:32 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-27 14:41:10 	at uap.ps.itm.monitor.service.center.ServerEnv.getInstance(ServerEnv.java:68)
 
-2013-12-24 08:59:32 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+2014-06-27 14:41:10 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:75)
 
-2013-12-24 08:59:32 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+2014-06-27 14:41:10 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
 
-2013-12-24 08:59:32 	at java.lang.reflect.Method.invoke(Method.java:597)
+2014-06-27 14:41:10 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
 
-2013-12-24 08:59:32 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+2014-06-27 14:41:10 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
 
-2013-12-24 08:59:32 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+2014-06-27 14:41:10 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
 
-2013-12-24 08:59:32 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
+2014-06-27 14:41:10 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
 
-2013-12-24 08:59:32 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
+2014-06-27 14:41:10 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
 
-2013-12-24 08:59:32 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
+2014-06-27 14:41:10 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
 
-2013-12-24 08:59:32 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+2014-06-27 14:41:10 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+2014-06-27 14:41:10 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+2014-06-27 14:41:10 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+2014-06-27 14:41:10 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+2014-06-27 14:41:10 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+2014-06-27 14:41:10 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
 
-2013-12-24 08:59:32 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+2014-06-27 14:41:10 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+2014-06-27 14:41:10 	at java.lang.Thread.run(Thread.java:662)
 
-2013-12-24 08:59:32 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+2014-06-27 15:16:31 java.lang.NullPointerException
 
-2013-12-24 08:59:32 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+2014-06-27 15:16:31 	at java.io.FileInputStream.<init>(FileInputStream.java:116)
 
-2013-12-24 08:59:32 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+2014-06-27 15:16:31 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
 
-2013-12-24 08:59:32 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+2014-06-27 15:16:31 	at uap.ps.itm.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
 
-2013-12-24 08:59:32 	at java.lang.Thread.run(Thread.java:662)
+2014-06-27 15:16:31 	at uap.ps.itm.monitor.service.center.ServerEnv.loadServerCfg(ServerEnv.java:96)
 
-2013-12-24 08:59:32 java.io.FileNotFoundException: ./logs/npr/nprreport.idx.log (No such file or directory)
+2014-06-27 15:16:31 	at uap.ps.itm.monitor.service.center.ServerEnv.<init>(ServerEnv.java:76)
 
-2013-12-24 08:59:32 	at java.io.FileInputStream.open(Native Method)
+2014-06-27 15:16:31 	at uap.ps.itm.monitor.service.center.ServerEnv.getInstance(ServerEnv.java:68)
 
-2013-12-24 08:59:32 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+2014-06-27 15:16:31 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:75)
 
-2013-12-24 08:59:32 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+2014-06-27 15:16:31 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
 
-2013-12-24 08:59:32 	at nc.monitor.pub.Text2HashVO.convertToVO(Text2HashVO.java:38)
+2014-06-27 15:16:31 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
 
-2013-12-24 08:59:32 	at nc.npr.service.NPRCentral.getNprlog(NPRCentral.java:297)
+2014-06-27 15:16:31 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
 
-2013-12-24 08:59:32 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-27 15:16:31 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
 
-2013-12-24 08:59:32 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+2014-06-27 15:16:31 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
 
-2013-12-24 08:59:32 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+2014-06-27 15:16:31 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
 
-2013-12-24 08:59:32 	at java.lang.reflect.Method.invoke(Method.java:597)
+2014-06-27 15:16:31 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
 
-2013-12-24 08:59:32 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+2014-06-27 15:16:31 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
 
-2013-12-24 08:59:32 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+2014-06-27 15:16:31 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
 
-2013-12-24 08:59:32 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
+2014-06-27 15:16:31 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
 
-2013-12-24 08:59:32 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
+2014-06-27 15:16:31 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
 
-2013-12-24 08:59:32 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
+2014-06-27 15:16:31 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
 
-2013-12-24 08:59:32 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+2014-06-27 15:16:31 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+2014-06-27 15:16:31 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+2014-06-27 15:16:31 	at java.lang.Thread.run(Thread.java:662)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+2014-06-27 15:18:54 java.lang.NullPointerException
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+2014-06-27 15:18:54 	at java.io.FileInputStream.<init>(FileInputStream.java:116)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+2014-06-27 15:18:54 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
 
-2013-12-24 08:59:32 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+2014-06-27 15:18:54 	at uap.ps.itm.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
 
-2013-12-24 08:59:32 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+2014-06-27 15:18:54 	at uap.ps.itm.monitor.service.center.ServerEnv.loadServerCfg(ServerEnv.java:96)
 
-2013-12-24 08:59:32 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+2014-06-27 15:18:54 	at uap.ps.itm.monitor.service.center.ServerEnv.<init>(ServerEnv.java:76)
 
-2013-12-24 08:59:32 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+2014-06-27 15:18:54 	at uap.ps.itm.monitor.service.center.ServerEnv.getInstance(ServerEnv.java:68)
 
-2013-12-24 08:59:32 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+2014-06-27 15:18:54 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:75)
 
-2013-12-24 08:59:32 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+2014-06-27 15:18:54 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
 
-2013-12-24 08:59:32 	at java.lang.Thread.run(Thread.java:662)
+2014-06-27 15:18:54 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
 
-2013-12-24 08:59:35 java.io.FileNotFoundException: /media/HITACHI/dev_env/20130904/nmc/server/./logs/db/test.log.0 (No such file or directory)
+2014-06-27 15:18:54 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
 
-2013-12-24 08:59:35 	at java.io.FileInputStream.open(Native Method)
+2014-06-27 15:18:54 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
 
-2013-12-24 08:59:35 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+2014-06-27 15:18:54 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
 
-2013-12-24 08:59:35 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:485)
+2014-06-27 15:18:54 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
 
-2013-12-24 08:59:35 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
+2014-06-27 15:18:54 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
 
-2013-12-24 08:59:35 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
+2014-06-27 15:18:54 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
 
-2013-12-24 08:59:35 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
+2014-06-27 15:18:54 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
 
-2013-12-24 08:59:35 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
+2014-06-27 15:18:54 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
 
-2013-12-24 08:59:35 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-27 15:18:54 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
 
-2013-12-24 08:59:35 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+2014-06-27 15:18:54 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
 
-2013-12-24 08:59:35 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+2014-06-27 15:18:54 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
 
-2013-12-24 08:59:35 	at java.lang.reflect.Method.invoke(Method.java:597)
+2014-06-27 15:18:54 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
 
-2013-12-24 08:59:35 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+2014-06-27 15:18:54 	at java.lang.Thread.run(Thread.java:662)
 
-2013-12-24 08:59:35 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+2014-06-27 15:25:00 java.lang.NullPointerException
 
-2013-12-24 08:59:35 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
+2014-06-27 15:25:00 	at java.io.FileInputStream.<init>(FileInputStream.java:116)
 
-2013-12-24 08:59:35 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
+2014-06-27 15:25:00 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
 
-2013-12-24 08:59:35 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
+2014-06-27 15:25:00 	at uap.ps.itm.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
 
-2013-12-24 08:59:35 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+2014-06-27 15:25:00 	at uap.ps.itm.monitor.service.center.ServerEnv.loadServerCfg(ServerEnv.java:96)
 
-2013-12-24 08:59:35 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+2014-06-27 15:25:00 	at uap.ps.itm.monitor.service.center.ServerEnv.<init>(ServerEnv.java:76)
 
-2013-12-24 08:59:35 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+2014-06-27 15:25:00 	at uap.ps.itm.monitor.service.center.ServerEnv.getInstance(ServerEnv.java:68)
 
-2013-12-24 08:59:35 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+2014-06-27 15:25:00 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:75)
 
-2013-12-24 08:59:35 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+2014-06-27 15:25:00 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
 
-2013-12-24 08:59:35 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+2014-06-27 15:25:00 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
 
-2013-12-24 08:59:35 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+2014-06-27 15:25:00 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
 
-2013-12-24 08:59:35 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+2014-06-27 15:25:00 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
 
-2013-12-24 08:59:35 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+2014-06-27 15:25:00 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
 
-2013-12-24 08:59:35 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+2014-06-27 15:25:00 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
 
-2013-12-24 08:59:35 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+2014-06-27 15:25:00 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
 
-2013-12-24 08:59:35 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+2014-06-27 15:25:00 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
 
-2013-12-24 08:59:35 	at java.lang.Thread.run(Thread.java:662)
+2014-06-27 15:25:00 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
 
-2013-12-24 09:00:05 java.lang.NullPointerException
+2014-06-27 15:25:00 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
 
-2013-12-24 09:00:05 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:506)
+2014-06-27 15:25:00 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
 
-2013-12-24 09:00:05 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
+2014-06-27 15:25:00 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
 
-2013-12-24 09:00:05 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
+2014-06-27 15:25:00 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
 
-2013-12-24 09:00:05 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
+2014-06-27 15:25:00 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
 
-2013-12-24 09:00:05 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
+2014-06-27 15:25:00 	at java.lang.Thread.run(Thread.java:662)
 
-2013-12-24 09:00:05 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-27 15:42:19 java.lang.NullPointerException
 
-2013-12-24 09:00:05 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+2014-06-27 15:42:19 	at java.io.FileInputStream.<init>(FileInputStream.java:116)
 
-2013-12-24 09:00:05 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+2014-06-27 15:42:19 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
 
-2013-12-24 09:00:05 	at java.lang.reflect.Method.invoke(Method.java:597)
+2014-06-27 15:42:19 	at uap.ps.itm.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
 
-2013-12-24 09:00:05 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+2014-06-27 15:42:19 	at uap.ps.itm.monitor.service.center.ServerEnv.loadServerCfg(ServerEnv.java:96)
 
-2013-12-24 09:00:05 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+2014-06-27 15:42:19 	at uap.ps.itm.monitor.service.center.ServerEnv.<init>(ServerEnv.java:76)
 
-2013-12-24 09:00:05 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
+2014-06-27 15:42:19 	at uap.ps.itm.monitor.service.center.ServerEnv.getInstance(ServerEnv.java:68)
 
-2013-12-24 09:00:05 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
+2014-06-27 15:42:19 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:75)
 
-2013-12-24 09:00:05 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
+2014-06-27 15:42:19 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
 
-2013-12-24 09:00:05 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+2014-06-27 15:42:19 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
 
-2013-12-24 09:00:05 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+2014-06-27 15:42:19 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
 
-2013-12-24 09:00:05 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+2014-06-27 15:42:19 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
 
-2013-12-24 09:00:05 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+2014-06-27 15:42:19 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
 
-2013-12-24 09:00:05 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+2014-06-27 15:42:19 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
 
-2013-12-24 09:00:05 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+2014-06-27 15:42:19 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
 
-2013-12-24 09:00:05 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+2014-06-27 15:42:19 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
 
-2013-12-24 09:00:05 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+2014-06-27 15:42:19 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
 
-2013-12-24 09:00:05 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+2014-06-27 15:42:19 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
 
-2013-12-24 09:00:05 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+2014-06-27 15:42:19 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
 
-2013-12-24 09:00:05 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+2014-06-27 15:42:19 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
 
-2013-12-24 09:00:05 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+2014-06-27 15:42:19 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
 
-2013-12-24 09:00:05 	at java.lang.Thread.run(Thread.java:662)
+2014-06-27 15:42:19 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
 
-2013-12-24 09:00:06 java.lang.NullPointerException
+2014-06-27 15:42:19 	at java.lang.Thread.run(Thread.java:662)
 
-2013-12-24 09:00:06 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:511)
+2014-06-27 15:51:16 java.lang.NullPointerException
 
-2013-12-24 09:00:06 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
+2014-06-27 15:51:16 	at java.io.FileInputStream.<init>(FileInputStream.java:116)
 
-2013-12-24 09:00:06 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
+2014-06-27 15:51:16 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
 
-2013-12-24 09:00:06 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
+2014-06-27 15:51:16 	at uap.ps.itm.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
 
-2013-12-24 09:00:06 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
+2014-06-27 15:51:16 	at uap.ps.itm.monitor.service.center.ServerEnv.loadServerCfg(ServerEnv.java:96)
 
-2013-12-24 09:00:06 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-27 15:51:16 	at uap.ps.itm.monitor.service.center.ServerEnv.<init>(ServerEnv.java:76)
 
-2013-12-24 09:00:06 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+2014-06-27 15:51:16 	at uap.ps.itm.monitor.service.center.ServerEnv.getInstance(ServerEnv.java:68)
 
-2013-12-24 09:00:06 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+2014-06-27 15:51:16 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:75)
 
-2013-12-24 09:00:06 	at java.lang.reflect.Method.invoke(Method.java:597)
+2014-06-27 15:51:16 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
 
-2013-12-24 09:00:06 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+2014-06-27 15:51:16 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
 
-2013-12-24 09:00:06 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+2014-06-27 15:51:16 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
 
-2013-12-24 09:00:06 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
+2014-06-27 15:51:16 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
 
-2013-12-24 09:00:06 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
+2014-06-27 15:51:16 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
 
-2013-12-24 09:00:06 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
+2014-06-27 15:51:16 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
 
-2013-12-24 09:00:06 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+2014-06-27 15:51:16 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
 
-2013-12-24 09:00:06 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+2014-06-27 15:51:16 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
 
-2013-12-24 09:00:06 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+2014-06-27 15:51:16 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
 
-2013-12-24 09:00:06 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+2014-06-27 15:51:16 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
 
-2013-12-24 09:00:06 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+2014-06-27 15:51:16 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
 
-2013-12-24 09:00:06 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+2014-06-27 15:51:16 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
 
-2013-12-24 09:00:06 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+2014-06-27 15:51:16 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
 
-2013-12-24 09:00:06 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+2014-06-27 15:51:16 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
 
-2013-12-24 09:00:06 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+2014-06-27 15:51:16 	at java.lang.Thread.run(Thread.java:662)
 
-2013-12-24 09:00:06 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+2014-06-27 15:52:57 java.lang.NullPointerException
 
-2013-12-24 09:00:06 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+2014-06-27 15:52:57 	at java.io.FileInputStream.<init>(FileInputStream.java:116)
 
-2013-12-24 09:00:06 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+2014-06-27 15:52:57 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
 
-2013-12-24 09:00:06 	at java.lang.Thread.run(Thread.java:662)
+2014-06-27 15:52:57 	at uap.ps.itm.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
 
-2013-12-24 09:00:07 java.io.FileNotFoundException: /media/HITACHI/dev_env/20130904/nmc/server/./logs/mw/server-127.0.0.1-8080.log.0 (No such file or directory)
+2014-06-27 15:52:57 	at uap.ps.itm.monitor.service.center.ServerEnv.loadServerCfg(ServerEnv.java:96)
 
-2013-12-24 09:00:07 	at java.io.FileInputStream.open(Native Method)
+2014-06-27 15:52:57 	at uap.ps.itm.monitor.service.center.ServerEnv.<init>(ServerEnv.java:76)
 
-2013-12-24 09:00:07 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+2014-06-27 15:52:57 	at uap.ps.itm.monitor.service.center.ServerEnv.getInstance(ServerEnv.java:68)
 
-2013-12-24 09:00:07 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:485)
+2014-06-27 15:52:57 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:75)
 
-2013-12-24 09:00:07 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
+2014-06-27 15:52:57 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
 
-2013-12-24 09:00:07 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
+2014-06-27 15:52:57 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
 
-2013-12-24 09:00:07 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
+2014-06-27 15:52:57 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
 
-2013-12-24 09:00:07 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
+2014-06-27 15:52:57 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
 
-2013-12-24 09:00:07 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-27 15:52:57 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
 
-2013-12-24 09:00:07 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+2014-06-27 15:52:57 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
 
-2013-12-24 09:00:07 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+2014-06-27 15:52:57 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
 
-2013-12-24 09:00:07 	at java.lang.reflect.Method.invoke(Method.java:597)
+2014-06-27 15:52:57 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
 
-2013-12-24 09:00:07 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+2014-06-27 15:52:57 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
 
-2013-12-24 09:00:07 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+2014-06-27 15:52:57 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
 
-2013-12-24 09:00:07 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
+2014-06-27 15:52:57 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
 
-2013-12-24 09:00:07 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
+2014-06-27 15:52:57 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
 
-2013-12-24 09:00:07 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
+2014-06-27 15:52:57 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
 
-2013-12-24 09:00:07 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+2014-06-27 15:52:57 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
 
-2013-12-24 09:00:07 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+2014-06-27 15:52:57 	at java.lang.Thread.run(Thread.java:662)
 
-2013-12-24 09:00:07 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+2014-06-27 16:09:36 stop the monitor.
 
-2013-12-24 09:00:07 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+2014-06-27 16:09:36 begin to unregister service from service center.
 
-2013-12-24 09:00:07 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+2014-06-27 16:09:36 unregister service  over!
 
-2013-12-24 09:00:07 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+2014-06-27 16:09:36 the OS  is Windows 7
 
-2013-12-24 09:00:07 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+2014-06-27 16:09:36 service center is 127.0.0.1:9999
 
-2013-12-24 09:00:07 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+2014-06-27 16:09:36 local web server is 10.2.112.90:9999
 
-2013-12-24 09:00:07 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+2014-06-27 16:09:36 begin to register service [serviceregister] to service center.
 
-2013-12-24 09:00:07 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+2014-06-27 16:09:36 stop the monitor.
 
-2013-12-24 09:00:07 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+2014-06-27 16:09:36 begin to unregister service from service center.
 
-2013-12-24 09:00:07 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+2014-06-27 16:09:36 stop the monitor.
 
-2013-12-24 09:00:07 	at java.lang.Thread.run(Thread.java:662)
+2014-06-27 16:09:36 begin to unregister service from service center.
 
-2013-12-24 09:00:09 java.lang.NullPointerException
+2014-06-27 16:09:36 unregister service  over!
 
-2013-12-24 09:00:09 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:506)
+2014-06-27 16:45:33 the OS  is Windows 7
 
-2013-12-24 09:00:09 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
+2014-06-27 16:45:36 service center is 127.0.0.1:9999
 
-2013-12-24 09:00:09 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
+2014-06-27 16:45:36 local web server is 10.2.112.90:9999
 
-2013-12-24 09:00:09 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
+2014-06-27 16:56:26 begin to register service [serviceregister] to service center.
 
-2013-12-24 09:00:09 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
+2014-06-27 16:56:26 stop the monitor.
 
-2013-12-24 09:00:09 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-27 16:56:26 begin to unregister service from service center.
 
-2013-12-24 09:00:09 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+2014-06-27 16:56:26 stop the monitor.
 
-2013-12-24 09:00:09 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+2014-06-27 16:56:26 begin to unregister service from service center.
 
-2013-12-24 09:00:09 	at java.lang.reflect.Method.invoke(Method.java:597)
+2014-06-27 16:56:26 unregister service  over!
 
-2013-12-24 09:00:09 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+2014-06-27 16:58:53 the OS  is Windows 7
 
-2013-12-24 09:00:09 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+2014-06-27 16:58:53 service center is 127.0.0.1:9999
 
-2013-12-24 09:00:09 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
+2014-06-27 16:58:53 local web server is 10.2.112.90:9999
 
-2013-12-24 09:00:09 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
+2014-06-27 16:58:53 begin to register service [serviceregister] to service center.
 
-2013-12-24 09:00:09 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
+2014-06-27 16:58:53 stop the monitor.
 
-2013-12-24 09:00:09 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+2014-06-27 16:58:53 begin to unregister service from service center.
 
-2013-12-24 09:00:09 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+2014-06-27 16:58:53 stop the monitor.
 
-2013-12-24 09:00:09 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+2014-06-27 16:58:53 begin to unregister service from service center.
 
-2013-12-24 09:00:09 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:09 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:09 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:09 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:09 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:09 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:09 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:09 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:09 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:09 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:10 java.lang.NullPointerException
-
-2013-12-24 09:00:10 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:511)
-
-2013-12-24 09:00:10 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:10 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:10 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:10 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:10 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:10 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:10 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:10 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:10 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:10 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:10 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:10 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:10 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:10 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:10 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:10 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:10 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:10 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:10 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:10 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:10 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:10 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:10 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:10 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:10 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:10 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:11 java.io.FileNotFoundException: /media/HITACHI/dev_env/20130904/nmc/server/./logs/db/design.log.0 (No such file or directory)
-
-2013-12-24 09:00:11 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:00:11 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:00:11 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:485)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:11 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:11 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:11 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:11 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:11 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:11 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:11 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:11 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:11 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:11 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:11 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:11 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:11 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:11 java.lang.NullPointerException
-
-2013-12-24 09:00:11 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:506)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:11 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:11 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:11 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:11 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:11 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:11 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:11 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:11 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:11 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:11 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:11 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:11 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:11 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:11 java.lang.NullPointerException
-
-2013-12-24 09:00:11 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:511)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:11 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:11 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:11 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:11 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:11 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:11 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:11 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:11 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:11 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:11 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:11 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:11 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:11 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:11 java.io.FileNotFoundException: /media/HITACHI/dev_env/20130904/nmc/server/./logs/mw/main.log.0 (No such file or directory)
-
-2013-12-24 09:00:11 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:00:11 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:00:11 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:485)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:11 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:11 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:11 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:11 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:11 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:11 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:11 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:11 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:11 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:11 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:11 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:11 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:11 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:11 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:11 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:11 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:12 java.lang.NullPointerException
-
-2013-12-24 09:00:12 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:506)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:12 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:12 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:12 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:12 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:12 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:12 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:12 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:12 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:12 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:12 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:12 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:12 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:12 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:12 java.lang.NullPointerException
-
-2013-12-24 09:00:12 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:511)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:12 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:12 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:12 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:12 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:12 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:12 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:12 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:12 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:12 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:12 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:12 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:12 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:12 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:12 java.io.FileNotFoundException: /media/HITACHI/dev_env/20130904/nmc/server/./logs/systemmonitor/Tony-PC-127.0.0.1.log.0 (No such file or directory)
-
-2013-12-24 09:00:12 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:00:12 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:00:12 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:485)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:12 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:12 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:12 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:12 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:12 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:12 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:12 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:12 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:12 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:12 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:12 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:12 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:12 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:12 java.lang.NullPointerException
-
-2013-12-24 09:00:12 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:506)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:12 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:12 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:12 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:12 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:12 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:12 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:12 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:12 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:12 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:12 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:12 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:12 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:12 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:12 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:12 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:12 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:13 java.lang.NullPointerException
-
-2013-12-24 09:00:13 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:511)
-
-2013-12-24 09:00:13 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:13 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:13 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:13 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:13 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:13 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:13 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:13 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:13 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:13 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:13 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:13 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:13 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:13 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:13 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:13 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:13 java.io.FileNotFoundException: /media/HITACHI/dev_env/20130904/nmc/server/./logs/onlineuser/usercount.log.0 (No such file or directory)
-
-2013-12-24 09:00:13 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:00:13 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:00:13 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:485)
-
-2013-12-24 09:00:13 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:13 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:13 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:13 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:13 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:13 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:13 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:13 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:13 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:13 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:13 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:13 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:13 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:13 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:13 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:13 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:13 java.lang.NullPointerException
-
-2013-12-24 09:00:13 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:506)
-
-2013-12-24 09:00:13 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:13 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:13 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:13 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:13 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:13 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:13 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:13 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:13 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:13 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:13 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:13 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:13 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:13 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:13 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:13 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:13 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:13 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:14 java.lang.NullPointerException
-
-2013-12-24 09:00:14 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:511)
-
-2013-12-24 09:00:14 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:14 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:14 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:14 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:14 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:14 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:14 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:14 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:14 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:14 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:14 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:14 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:14 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:14 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:14 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:14 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:14 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:14 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:14 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:14 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:14 java.io.FileNotFoundException: /media/HITACHI/dev_env/20130904/nmc/server/./logs/snapshot/snapshotidx.log (No such file or directory)
-
-2013-12-24 09:00:14 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:00:14 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:00:14 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:485)
-
-2013-12-24 09:00:14 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:14 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:14 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:14 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:14 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:14 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:14 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:14 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:14 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:14 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:14 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:14 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:14 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:14 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:14 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:14 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:14 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:14 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:14 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:14 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:14 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:17 java.lang.NullPointerException
-
-2013-12-24 09:00:17 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:506)
-
-2013-12-24 09:00:17 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:17 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:17 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:17 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:17 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:17 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:17 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:17 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:17 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:17 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:17 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:17 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:17 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:17 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:17 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:17 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:17 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:17 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:17 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:17 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:17 java.lang.NullPointerException
-
-2013-12-24 09:00:17 	at nc.monitor.pub.Toolkit.copyFiles2Dir(Toolkit.java:511)
-
-2013-12-24 09:00:17 	at nc.npr.service.log.collect.FileCollector.copyFiles(FileCollector.java:139)
-
-2013-12-24 09:00:17 	at nc.npr.service.log.collect.FileCollector.localLogsCollect(FileCollector.java:113)
-
-2013-12-24 09:00:17 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:49)
-
-2013-12-24 09:00:17 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:17 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:17 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:17 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:17 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:17 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:17 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:17 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:17 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:17 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:17 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:17 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:17 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:17 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:17 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:17 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:17 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:17 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:18 java.io.IOException: No such file or directory
-
-2013-12-24 09:00:18 	at java.io.UnixFileSystem.createFileExclusively(Native Method)
-
-2013-12-24 09:00:18 	at java.io.File.createNewFile(File.java:883)
-
-2013-12-24 09:00:18 	at nc.monitor.pub.HashVO2Text.writeToFile(HashVO2Text.java:29)
-
-2013-12-24 09:00:18 	at nc.npr.service.log.collect.FileCollector.collectDeployInfo(FileCollector.java:80)
-
-2013-12-24 09:00:18 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:52)
-
-2013-12-24 09:00:18 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:18 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:18 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:18 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:18 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:18 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:18 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:18 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:18 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:18 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:18 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:18 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:18 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:18 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:18 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:18 java.io.IOException: No such file or directory
-
-2013-12-24 09:00:18 	at java.io.UnixFileSystem.createFileExclusively(Native Method)
-
-2013-12-24 09:00:18 	at java.io.File.createNewFile(File.java:883)
-
-2013-12-24 09:00:18 	at nc.monitor.pub.HashVO2Text.writeToFile(HashVO2Text.java:29)
-
-2013-12-24 09:00:18 	at nc.npr.service.log.collect.FileCollector.collectDeployInfo(FileCollector.java:102)
-
-2013-12-24 09:00:18 	at nc.npr.service.log.collect.FileCollector.collectLogFilesForSnpsht(FileCollector.java:52)
-
-2013-12-24 09:00:18 	at nc.npr.service.NPRCentral.doSnapshot(NPRCentral.java:214)
-
-2013-12-24 09:00:18 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:18 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:18 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:18 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:18 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:18 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:18 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:18 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:18 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:18 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:18 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:18 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:18 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:18 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:18 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:00:19 java.io.FileNotFoundException: ./logs/npr/nprreport.idx.log (No such file or directory)
-
-2013-12-24 09:00:19 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:00:19 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:00:19 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 09:00:19 	at nc.monitor.pub.Text2HashVO.convertToVO(Text2HashVO.java:38)
-
-2013-12-24 09:00:19 	at nc.npr.service.NPRCentral.getNprlog(NPRCentral.java:297)
-
-2013-12-24 09:00:19 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:00:19 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:00:19 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:00:19 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:00:19 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:00:19 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:00:19 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:00:19 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:00:19 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:00:19 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:00:19 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:00:19 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:00:19 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:00:19 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:00:19 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:00:19 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:00:19 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:00:19 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:00:19 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:00:19 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:00:19 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:00:19 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:03:10 java.io.FileNotFoundException: ./logs/npr/nprreport.idx.log (No such file or directory)
-
-2013-12-24 09:03:10 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:03:10 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:03:10 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 09:03:10 	at nc.monitor.pub.Text2HashVO.convertToVO(Text2HashVO.java:38)
-
-2013-12-24 09:03:10 	at nc.npr.service.NPRCentral.getNprlog(NPRCentral.java:297)
-
-2013-12-24 09:03:10 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:03:10 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:03:10 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:03:10 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:03:10 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:03:10 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:03:10 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:03:10 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:03:10 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:03:10 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:03:10 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:03:10 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:03:10 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:03:10 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:03:10 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:03:10 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:03:10 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:03:10 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:03:10 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:03:10 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:03:10 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:03:10 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:03:22 java.io.FileNotFoundException: ./logs/npr/nprreport.idx.log (No such file or directory)
-
-2013-12-24 09:03:22 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:03:22 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:03:22 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 09:03:22 	at nc.monitor.pub.Text2HashVO.convertToVO(Text2HashVO.java:38)
-
-2013-12-24 09:03:22 	at nc.npr.service.NPRCentral.getNprlog(NPRCentral.java:297)
-
-2013-12-24 09:03:22 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:03:22 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:03:22 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:03:22 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:03:22 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:03:22 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:03:22 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:03:22 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:03:22 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:03:22 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:03:22 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:03:22 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:03:22 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:03:22 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:03:22 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:03:22 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:03:22 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:03:22 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:03:22 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:03:22 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:03:22 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:03:22 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:06:01 开始生成报告：路径=./NPR/Logs/20131224090321
-
-2013-12-24 09:06:01 开始生成报告：起始时间=
-
-2013-12-24 09:06:01 开始生成报告：结束时间=
-
-2013-12-24 09:06:01 java.io.FileNotFoundException: ./conf/nprplugin.xml (No such file or directory)
-
-2013-12-24 09:06:01 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:06:01 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:06:01 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 09:06:01 	at nc.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
-
-2013-12-24 09:06:01 	at nc.npr.service.log.resolve.LogResolve.getNPRPlugins(LogResolve.java:490)
-
-2013-12-24 09:06:01 	at nc.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
-
-2013-12-24 09:06:01 	at nc.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
-
-2013-12-24 09:06:01 	at nc.npr.service.NPRCentral.creatReport(NPRCentral.java:138)
-
-2013-12-24 09:06:01 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:06:01 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:06:01 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:06:01 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:06:01 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:06:01 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:06:01 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:06:01 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:06:01 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:06:01 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:06:01 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:06:01 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:06:01 java.lang.reflect.InvocationTargetException
-
-2013-12-24 09:06:01 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:06:01 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:06:01 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:06:01 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:06:01 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:06:01 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:06:01 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:06:01 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:06:01 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:06:01 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:06:01 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:06:01 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:06:01 Caused by: java.lang.NullPointerException
-
-2013-12-24 09:06:01 	at nc.npr.service.log.resolve.LogResolve.getPluginSortMap(LogResolve.java:535)
-
-2013-12-24 09:06:01 	at nc.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
-
-2013-12-24 09:06:01 	at nc.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
-
-2013-12-24 09:06:01 	at nc.npr.service.NPRCentral.creatReport(NPRCentral.java:138)
-
-2013-12-24 09:06:01 	... 22 more
-
-2013-12-24 09:06:01 java.io.FileNotFoundException: ./logs/npr/nprreport.idx.log (No such file or directory)
-
-2013-12-24 09:06:01 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:06:01 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:06:01 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 09:06:01 	at nc.monitor.pub.Text2HashVO.convertToVO(Text2HashVO.java:38)
-
-2013-12-24 09:06:01 	at nc.npr.service.NPRCentral.getNprlog(NPRCentral.java:297)
-
-2013-12-24 09:06:01 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:06:01 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:06:01 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:06:01 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:06:01 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:06:01 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:06:01 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:06:01 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:06:01 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:06:01 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:06:01 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:06:01 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:06:01 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:06:01 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:06:29 开始生成报告：路径=./NPR/Logs/20131224090321
-
-2013-12-24 09:06:29 开始生成报告：起始时间=
-
-2013-12-24 09:06:29 开始生成报告：结束时间=
-
-2013-12-24 09:06:29 java.io.FileNotFoundException: ./conf/nprplugin.xml (No such file or directory)
-
-2013-12-24 09:06:29 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:06:29 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:06:29 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 09:06:29 	at nc.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
-
-2013-12-24 09:06:29 	at nc.npr.service.log.resolve.LogResolve.getNPRPlugins(LogResolve.java:490)
-
-2013-12-24 09:06:29 	at nc.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
-
-2013-12-24 09:06:29 	at nc.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
-
-2013-12-24 09:06:29 	at nc.npr.service.NPRCentral.creatReport(NPRCentral.java:138)
-
-2013-12-24 09:06:29 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:06:29 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:06:29 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:06:29 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:06:29 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:06:29 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:06:29 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:06:29 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:06:29 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:06:29 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:06:29 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:06:29 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:06:29 java.lang.reflect.InvocationTargetException
-
-2013-12-24 09:06:29 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:06:29 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:06:29 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:06:29 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:06:29 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:06:29 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:06:29 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:06:29 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:06:29 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:06:29 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:06:29 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:06:29 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 09:06:29 Caused by: java.lang.NullPointerException
-
-2013-12-24 09:06:29 	at nc.npr.service.log.resolve.LogResolve.getPluginSortMap(LogResolve.java:535)
-
-2013-12-24 09:06:29 	at nc.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
-
-2013-12-24 09:06:29 	at nc.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
-
-2013-12-24 09:06:29 	at nc.npr.service.NPRCentral.creatReport(NPRCentral.java:138)
-
-2013-12-24 09:06:29 	... 22 more
-
-2013-12-24 09:06:29 java.io.FileNotFoundException: ./logs/npr/nprreport.idx.log (No such file or directory)
-
-2013-12-24 09:06:29 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 09:06:29 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 09:06:29 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 09:06:29 	at nc.monitor.pub.Text2HashVO.convertToVO(Text2HashVO.java:38)
-
-2013-12-24 09:06:29 	at nc.npr.service.NPRCentral.getNprlog(NPRCentral.java:297)
-
-2013-12-24 09:06:29 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 09:06:29 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 09:06:29 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 09:06:29 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 09:06:29 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 09:06:29 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 09:06:29 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 09:06:29 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 09:06:29 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 09:06:29 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 09:06:29 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 09:06:29 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 09:06:29 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 09:06:29 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 10:01:25 开始生成报告：路径=./NPR/Logs/20131224090321
-
-2013-12-24 10:01:25 开始生成报告：起始时间=
-
-2013-12-24 10:01:25 开始生成报告：结束时间=
-
-2013-12-24 10:01:25 java.io.FileNotFoundException: ./conf/nprplugin.xml (No such file or directory)
-
-2013-12-24 10:01:25 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 10:01:25 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 10:01:25 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 10:01:25 	at nc.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
-
-2013-12-24 10:01:25 	at nc.npr.service.log.resolve.LogResolve.getNPRPlugins(LogResolve.java:490)
-
-2013-12-24 10:01:25 	at nc.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
-
-2013-12-24 10:01:25 	at nc.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
-
-2013-12-24 10:01:25 	at nc.npr.service.NPRCentral.creatReport(NPRCentral.java:138)
-
-2013-12-24 10:01:25 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 10:01:25 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 10:01:25 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 10:01:25 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 10:01:25 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 10:01:25 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 10:01:25 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 10:01:25 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 10:01:25 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 10:01:25 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 10:01:25 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 10:01:25 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 10:01:25 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 10:01:25 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 10:01:25 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 10:01:25 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 10:01:25 java.lang.reflect.InvocationTargetException
-
-2013-12-24 10:01:25 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 10:01:25 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 10:01:25 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 10:01:25 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 10:01:25 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 10:01:25 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 10:01:25 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 10:01:25 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 10:01:25 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 10:01:25 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 10:01:25 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 10:01:25 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 10:01:25 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 10:01:25 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 10:01:25 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 10:01:25 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 10:01:25 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 10:01:25 Caused by: java.lang.NullPointerException
-
-2013-12-24 10:01:25 	at nc.npr.service.log.resolve.LogResolve.getPluginSortMap(LogResolve.java:535)
-
-2013-12-24 10:01:25 	at nc.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
-
-2013-12-24 10:01:25 	at nc.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
-
-2013-12-24 10:01:25 	at nc.npr.service.NPRCentral.creatReport(NPRCentral.java:138)
-
-2013-12-24 10:01:25 	... 22 more
-
-2013-12-24 10:01:26 java.io.FileNotFoundException: ./logs/npr/nprreport.idx.log (No such file or directory)
-
-2013-12-24 10:01:26 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 10:01:26 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 10:01:26 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 10:01:26 	at nc.monitor.pub.Text2HashVO.convertToVO(Text2HashVO.java:38)
-
-2013-12-24 10:01:26 	at nc.npr.service.NPRCentral.getNprlog(NPRCentral.java:297)
-
-2013-12-24 10:01:26 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 10:01:26 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 10:01:26 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 10:01:26 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 10:01:26 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 10:01:26 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 10:01:26 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 10:01:26 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 10:01:26 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 10:01:26 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 10:01:26 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 10:01:26 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 10:01:26 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 10:01:26 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 10:01:26 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 10:01:26 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 10:01:26 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 10:01:26 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 10:01:26 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 10:01:26 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 10:01:26 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 10:01:26 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 10:02:31 开始生成报告：路径=./NPR/Logs/20131224090321
-
-2013-12-24 10:02:31 开始生成报告：起始时间=
-
-2013-12-24 10:02:31 开始生成报告：结束时间=
-
-2013-12-24 10:04:18 java.io.FileNotFoundException: ./conf/nprplugin.xml (No such file or directory)
-
-2013-12-24 10:04:18 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 10:04:18 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 10:04:18 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 10:04:18 	at nc.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
-
-2013-12-24 10:04:18 	at nc.npr.service.log.resolve.LogResolve.getNPRPlugins(LogResolve.java:490)
-
-2013-12-24 10:04:18 	at nc.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
-
-2013-12-24 10:04:18 	at nc.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
-
-2013-12-24 10:04:18 	at nc.npr.service.NPRCentral.creatReport(NPRCentral.java:138)
-
-2013-12-24 10:04:18 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 10:04:18 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 10:04:18 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 10:04:18 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 10:04:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 10:04:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 10:04:18 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 10:04:18 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 10:04:18 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 10:04:18 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 10:04:18 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 10:04:18 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 10:04:18 java.lang.reflect.InvocationTargetException
-
-2013-12-24 10:04:18 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 10:04:18 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 10:04:18 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 10:04:18 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 10:04:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 10:04:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 10:04:18 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 10:04:18 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 10:04:18 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 10:04:18 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 10:04:18 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 10:04:18 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 10:04:18 Caused by: java.lang.NullPointerException
-
-2013-12-24 10:04:18 	at nc.npr.service.log.resolve.LogResolve.getPluginSortMap(LogResolve.java:535)
-
-2013-12-24 10:04:18 	at nc.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
-
-2013-12-24 10:04:18 	at nc.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
-
-2013-12-24 10:04:18 	at nc.npr.service.NPRCentral.creatReport(NPRCentral.java:138)
-
-2013-12-24 10:04:18 	... 22 more
-
-2013-12-24 10:04:18 java.io.FileNotFoundException: ./logs/npr/nprreport.idx.log (No such file or directory)
-
-2013-12-24 10:04:18 	at java.io.FileInputStream.open(Native Method)
-
-2013-12-24 10:04:18 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2013-12-24 10:04:18 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2013-12-24 10:04:18 	at nc.monitor.pub.Text2HashVO.convertToVO(Text2HashVO.java:38)
-
-2013-12-24 10:04:18 	at nc.npr.service.NPRCentral.getNprlog(NPRCentral.java:297)
-
-2013-12-24 10:04:18 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-
-2013-12-24 10:04:18 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-
-2013-12-24 10:04:18 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-
-2013-12-24 10:04:18 	at java.lang.reflect.Method.invoke(Method.java:597)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.MonitorServlet.invoke(MonitorServlet.java:51)
-
-2013-12-24 10:04:18 	at nc.monitor.servlet.MonitorServlet.doPost(MonitorServlet.java:32)
-
-2013-12-24 10:04:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:767)
-
-2013-12-24 10:04:18 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
-
-2013-12-24 10:04:18 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
-
-2013-12-24 10:04:18 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
-
-2013-12-24 10:04:18 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
-
-2013-12-24 10:04:18 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
-
-2013-12-24 10:04:18 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
-
-2013-12-24 10:04:18 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
-
-2013-12-24 10:04:18 	at java.lang.Thread.run(Thread.java:662)
-
-2013-12-24 10:05:08 开始生成报告：路径=./NPR/Logs/20131224090321
-
-2013-12-24 10:05:08 开始生成报告：起始时间=
-
-2013-12-24 10:05:08 开始生成报告：结束时间=
-
-2013-12-24 10:05:25 process file : usercount.log.0
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.OnlineUserChartImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.OnlineUserChartImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.OnlineUserTableImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.OnlineUserTableImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.OnlineUserChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.OnlineUserChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.OnlineUserTableImpl
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.OnlineUserTableImpl
-
-2013-12-24 10:05:25 process file : dbinfo.log
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.MWSummaryPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.MWSummaryPluginImpl
-
-2013-12-24 10:05:25 process file : mwinfo.log
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.MWSummaryPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.MWSummaryPluginImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.MWSummaryPluginImpl
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.MWSummaryPluginImpl
-
-2013-12-24 10:05:25 process file : dbinfo.log
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.DBSummaryPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.DBSummaryPluginImpl
-
-2013-12-24 10:05:25 process file : mwinfo.log
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.DBSummaryPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.DBSummaryPluginImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.DBSummaryPluginImpl
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.DBSummaryPluginImpl
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.MWCpuTimePluginImpl
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.MWCpuTimePluginImpl
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.NetworkTrafficPluginImpl
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.NetworkTrafficPluginImpl
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.SQLExecuteSummaryImpl
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.SQLExecuteSummaryImpl
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.RemoteCallCostTimeTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.RemoteCallCostTimeTop10
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.RemoteCallWriteTrafficTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.RemoteCallWriteTrafficTop10
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.RemoteCallReadTrafficTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.RemoteCallReadTrafficTop10
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.RemoteCallResultTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.RemoteCallResultTop10
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.RemoteCallSQLNumsTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.RemoteCallSQLNumsTop10
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.RequestMasterTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.RequestMasterTop10
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.CallMasterNumsTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.CallMasterNumsTop10
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.CallDbNumsTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.CallDbNumsTop10
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.RemoteCallConnNotClosePluginImpl
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.RemoteCallConnNotClosePluginImpl
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.RemoteCallTimesOverLimit
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.RemoteCallTimesOverLimit
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.RemoteCallSQLTimesOverLimit
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.RemoteCallSQLTimesOverLimit
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.ReadOrWriteOver1MImpl
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.ReadOrWriteOver1MImpl
-
-2013-12-24 10:05:25 process file : main.log.0
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.ServersThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.ServersThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.ThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.ThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.ServersThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.ServersThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.JvmMemoryChartImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.JvmMemoryChartImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.JvmRespCostChartImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.JvmRespCostChartImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.JvmThroughputChartImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.JvmThroughputChartImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.JvmWebThreadChartImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.JvmWebThreadChartImpl
-
-2013-12-24 10:05:25 process file : server-127.0.0.1-8080.log.0
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.ServersThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.ServersThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.ThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.ThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.ServersThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.ServersThroughputPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.JvmMemoryChartImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.JvmMemoryChartImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.JvmRespCostChartImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.JvmRespCostChartImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.JvmThroughputChartImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.JvmThroughputChartImpl
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.JvmWebThreadChartImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.JvmWebThreadChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.ServersThroughputPluginImplservers
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.ServersThroughputPluginImplservers
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.JvmRespCostChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.JvmRespCostChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.ServersThroughputPluginImplcluster
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.ServersThroughputPluginImplcluster
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.JvmMemoryChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.JvmMemoryChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.JvmThroughputChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.JvmThroughputChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.JvmWebThreadChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.JvmWebThreadChartImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.ThroughputPluginImplmaster
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.ThroughputPluginImplmaster
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.SQLCostTimeTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.SQLCostTimeTop10
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.SQLResultTop10
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.SQLResultTop10
-
-2013-12-24 10:05:25 process file : Tony-PC-127.0.0.1.log.0
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.SystemMonitorPluginImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.SystemMonitorPluginImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.SystemMonitorPluginImpl
-
-2013-12-24 10:05:25 process file : snapshotidx.log
-
-2013-12-24 10:05:25 NPR plugin process begin : nc.npr.service.plugin.MsgSnapshotPlugImpl
-
-2013-12-24 10:05:25 NPR plugin process end : nc.npr.service.plugin.MsgSnapshotPlugImpl
-
-2013-12-24 10:05:25 NPR plugin get result begin : nc.npr.service.plugin.MsgSnapshotPlugImpl
-
-2013-12-24 10:05:25 NPR plugin get result end : nc.npr.service.plugin.MsgSnapshotPlugImpl
-
-2013-12-24 10:05:25 NPR plugin begin : nc.npr.service.plugin.DatabaseWorkLoadChartImpl
-
-2013-12-24 10:05:25 NPR plugin end : nc.npr.service.plugin.DatabaseWorkLoadChartImpl
-
-2014-04-08 11:01:10 java.io.FileNotFoundException: /media/HITACHI/dev_env/view/NC_UAP_FW_NEW6.3_dev/NC6_UAP_VOB/NC_UAP_FW/ierp/bin/prop.xml (No such file or directory)
-
-2014-04-08 11:01:10 	at java.io.FileInputStream.open(Native Method)
-
-2014-04-08 11:01:10 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2014-04-08 11:01:10 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2014-04-08 11:01:10 	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:70)
-
-2014-04-08 11:01:10 	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:161)
-
-2014-04-08 11:01:10 	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:653)
-
-2014-04-08 11:01:10 	at com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:186)
-
-2014-04-08 11:01:10 	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:772)
-
-2014-04-08 11:01:10 	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
-
-2014-04-08 11:01:10 	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
-
-2014-04-08 11:01:10 	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:235)
-
-2014-04-08 11:01:10 	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:284)
-
-2014-04-08 11:01:10 	at weblogic.xml.jaxp.RegistryDocumentBuilder.parse(RegistryDocumentBuilder.java:155)
-
-2014-04-08 11:01:10 	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:180)
-
-2014-04-08 11:01:10 	at nc.monitor.service.process.MonitorEnv.getClusterInfoForServer(MonitorEnv.java:360)
-
-2014-04-08 11:01:10 	at nc.monitor.service.process.MonitorEnv.initServerInfoByfile(MonitorEnv.java:234)
-
-2014-04-08 11:01:10 	at nc.system.service.SysDataHandler.getSysDataWithNode(SysDataHandler.java:214)
-
-2014-04-08 11:01:10 	at nc.system.service.SystemDataHandler.run(SystemDataHandler.java:51)
-
-2014-04-08 11:01:10 java.io.FileNotFoundException: ../../ierp/bin/prop.xml (No such file or directory)
-
-2014-04-08 11:01:10 	at java.io.FileInputStream.open(Native Method)
-
-2014-04-08 11:01:10 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2014-04-08 11:01:10 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2014-04-08 11:01:10 	at nc.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
-
-2014-04-08 11:01:10 	at nc.monitor.service.process.MonitorEnv.initWebServer(MonitorEnv.java:298)
-
-2014-04-08 11:01:10 	at nc.monitor.service.process.MonitorEnv.initServerInfoByfile(MonitorEnv.java:292)
-
-2014-04-08 11:01:10 	at nc.system.service.SysDataHandler.getSysDataWithNode(SysDataHandler.java:214)
-
-2014-04-08 11:01:10 	at nc.system.service.SystemDataHandler.run(SystemDataHandler.java:51)
-
-2014-04-08 11:01:10 java.io.FileNotFoundException: ../../ierp/bin/prop.xml (No such file or directory)
-
-2014-04-08 11:01:10 	at java.io.FileInputStream.open(Native Method)
-
-2014-04-08 11:01:10 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-
-2014-04-08 11:01:10 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-
-2014-04-08 11:01:10 	at nc.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
-
-2014-04-08 11:01:10 	at nc.system.service.SysDataHandler.getSysDataWithNode(SysDataHandler.java:224)
-
-2014-04-08 11:01:10 	at nc.system.service.SystemDataHandler.run(SystemDataHandler.java:51)
+2014-06-27 16:58:53 unregister service  over!
