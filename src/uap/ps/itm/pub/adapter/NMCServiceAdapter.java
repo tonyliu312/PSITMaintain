@@ -3,7 +3,6 @@
  */
 package uap.ps.itm.pub.adapter;
 
-import uap.ps.itm.monitor.pub.Toolkit;
 
 /**
  * @author liuzy

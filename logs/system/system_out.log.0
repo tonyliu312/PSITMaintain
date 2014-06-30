@@ -380,3 +380,536 @@
 2014-06-27 16:58:53 begin to unregister service from service center.
 
 2014-06-27 16:58:53 unregister service  over!
+
+2014-06-29 18:36:10 java.lang.NullPointerException
+
+2014-06-29 18:36:10 	at nc.monitor.servlet.Invoker.checkSecurity(Invoker.java:96)
+
+2014-06-29 18:36:10 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:72)
+
+2014-06-29 18:36:10 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+
+2014-06-29 18:36:10 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:52)
+
+2014-06-29 18:36:10 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
+
+2014-06-29 18:36:10 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
+
+2014-06-29 18:36:10 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+
+2014-06-29 18:36:10 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+
+2014-06-29 18:36:10 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+2014-06-29 18:36:10 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+
+2014-06-29 18:36:10 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+
+2014-06-29 18:36:10 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+2014-06-29 18:36:10 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+
+2014-06-29 18:36:10 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+
+2014-06-29 18:36:10 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+2014-06-29 18:36:10 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+
+2014-06-29 18:36:10 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+
+2014-06-29 18:36:10 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+2014-06-29 18:36:10 	at java.lang.Thread.run(Thread.java:695)
+
+2014-06-29 18:52:00 开始生成报告：路径=./NPR/Logs/20140629185107
+
+2014-06-29 18:52:00 开始生成报告：起始时间=2014-05-20 00:00:00
+
+2014-06-29 18:52:00 开始生成报告：结束时间=2014-06-29 18:52:00
+
+2014-06-29 18:52:00 java.io.FileNotFoundException: ./conf/nprplugin.xml (No such file or directory)
+
+2014-06-29 18:52:00 	at java.io.FileInputStream.open(Native Method)
+
+2014-06-29 18:52:00 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+
+2014-06-29 18:52:00 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+
+2014-06-29 18:52:00 	at nc.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
+
+2014-06-29 18:52:00 	at uap.ps.itm.npr.service.log.resolve.LogResolve.getNPRPlugins(LogResolve.java:490)
+
+2014-06-29 18:52:00 	at uap.ps.itm.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
+
+2014-06-29 18:52:00 	at uap.ps.itm.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
+
+2014-06-29 18:52:00 	at uap.ps.itm.npr.service.ReportCentral.creatReport(ReportCentral.java:138)
+
+2014-06-29 18:52:00 	at uap.ps.itm.pub.servlet.PSITMService.buildNPR(PSITMService.java:60)
+
+2014-06-29 18:52:00 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+2014-06-29 18:52:00 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+
+2014-06-29 18:52:00 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+
+2014-06-29 18:52:00 	at java.lang.reflect.Method.invoke(Method.java:597)
+
+2014-06-29 18:52:00 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+
+2014-06-29 18:52:00 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+
+2014-06-29 18:52:00 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:53)
+
+2014-06-29 18:52:00 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
+
+2014-06-29 18:52:00 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
+
+2014-06-29 18:52:00 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+2014-06-29 18:52:00 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+
+2014-06-29 18:52:00 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+2014-06-29 18:52:00 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+
+2014-06-29 18:52:00 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+
+2014-06-29 18:52:00 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+2014-06-29 18:52:00 	at java.lang.Thread.run(Thread.java:695)
+
+2014-06-29 18:52:00 java.lang.reflect.InvocationTargetException
+
+2014-06-29 18:52:00 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+2014-06-29 18:52:00 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+
+2014-06-29 18:52:00 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+
+2014-06-29 18:52:00 	at java.lang.reflect.Method.invoke(Method.java:597)
+
+2014-06-29 18:52:00 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+
+2014-06-29 18:52:00 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+
+2014-06-29 18:52:00 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:53)
+
+2014-06-29 18:52:00 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
+
+2014-06-29 18:52:00 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
+
+2014-06-29 18:52:00 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+2014-06-29 18:52:00 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+
+2014-06-29 18:52:00 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+
+2014-06-29 18:52:00 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+2014-06-29 18:52:00 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+
+2014-06-29 18:52:00 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+
+2014-06-29 18:52:00 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+2014-06-29 18:52:00 	at java.lang.Thread.run(Thread.java:695)
+
+2014-06-29 18:52:00 Caused by: java.lang.NullPointerException
+
+2014-06-29 18:52:00 	at uap.ps.itm.npr.service.log.resolve.LogResolve.getPluginSortMap(LogResolve.java:535)
+
+2014-06-29 18:52:00 	at uap.ps.itm.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
+
+2014-06-29 18:52:00 	at uap.ps.itm.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
+
+2014-06-29 18:52:00 	at uap.ps.itm.npr.service.ReportCentral.creatReport(ReportCentral.java:138)
+
+2014-06-29 18:52:00 	at uap.ps.itm.pub.servlet.PSITMService.buildNPR(PSITMService.java:60)
+
+2014-06-29 18:52:00 	... 22 more
+
+2014-06-29 18:57:22 /Users/Tony/DEV_ENV/PSITMaintain/.
+
+2014-06-29 18:57:42 /Users/Tony/DEV_ENV/PSITMaintain
+
+2014-06-29 19:01:14 开始生成报告：路径=./NPR/Logs/20140629190058
+
+2014-06-29 19:01:14 开始生成报告：起始时间=2014-05-20 00:00:00
+
+2014-06-29 19:01:14 开始生成报告：结束时间=2014-06-29 19:01:14
+
+2014-06-29 19:01:14 java.io.FileNotFoundException: ./conf/nprplugin.xml (No such file or directory)
+
+2014-06-29 19:01:14 	at java.io.FileInputStream.open(Native Method)
+
+2014-06-29 19:01:14 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+
+2014-06-29 19:01:14 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+
+2014-06-29 19:01:14 	at nc.monitor.pub.Xml2HashVO.convertToVO(Xml2HashVO.java:78)
+
+2014-06-29 19:01:14 	at uap.ps.itm.npr.service.log.resolve.LogResolve.getNPRPlugins(LogResolve.java:490)
+
+2014-06-29 19:01:14 	at uap.ps.itm.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
+
+2014-06-29 19:01:14 	at uap.ps.itm.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
+
+2014-06-29 19:01:14 	at uap.ps.itm.npr.service.ReportCentral.creatReport(ReportCentral.java:138)
+
+2014-06-29 19:01:14 	at uap.ps.itm.pub.servlet.PSITMService.buildNPR(PSITMService.java:69)
+
+2014-06-29 19:01:14 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+2014-06-29 19:01:14 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+
+2014-06-29 19:01:14 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+
+2014-06-29 19:01:14 	at java.lang.reflect.Method.invoke(Method.java:597)
+
+2014-06-29 19:01:14 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+
+2014-06-29 19:01:14 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+
+2014-06-29 19:01:14 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:53)
+
+2014-06-29 19:01:14 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
+
+2014-06-29 19:01:14 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
+
+2014-06-29 19:01:14 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+2014-06-29 19:01:14 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+
+2014-06-29 19:01:14 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+2014-06-29 19:01:14 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+
+2014-06-29 19:01:14 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+
+2014-06-29 19:01:14 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+2014-06-29 19:01:14 	at java.lang.Thread.run(Thread.java:695)
+
+2014-06-29 19:01:14 java.lang.reflect.InvocationTargetException
+
+2014-06-29 19:01:14 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+2014-06-29 19:01:14 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+
+2014-06-29 19:01:14 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+
+2014-06-29 19:01:14 	at java.lang.reflect.Method.invoke(Method.java:597)
+
+2014-06-29 19:01:14 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+
+2014-06-29 19:01:14 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+
+2014-06-29 19:01:14 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:53)
+
+2014-06-29 19:01:14 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
+
+2014-06-29 19:01:14 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
+
+2014-06-29 19:01:14 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+2014-06-29 19:01:14 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+
+2014-06-29 19:01:14 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+
+2014-06-29 19:01:14 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+2014-06-29 19:01:14 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+
+2014-06-29 19:01:14 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+
+2014-06-29 19:01:14 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+2014-06-29 19:01:14 	at java.lang.Thread.run(Thread.java:695)
+
+2014-06-29 19:01:14 Caused by: java.lang.NullPointerException
+
+2014-06-29 19:01:14 	at uap.ps.itm.npr.service.log.resolve.LogResolve.getPluginSortMap(LogResolve.java:535)
+
+2014-06-29 19:01:14 	at uap.ps.itm.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:167)
+
+2014-06-29 19:01:14 	at uap.ps.itm.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
+
+2014-06-29 19:01:14 	at uap.ps.itm.npr.service.ReportCentral.creatReport(ReportCentral.java:138)
+
+2014-06-29 19:01:14 	at uap.ps.itm.pub.servlet.PSITMService.buildNPR(PSITMService.java:69)
+
+2014-06-29 19:01:14 	... 22 more
+
+2014-06-29 21:27:47 开始生成报告：路径=./NPR/Logs/20140629212745
+
+2014-06-29 21:27:47 开始生成报告：起始时间=2014-05-20 00:00:00
+
+2014-06-29 21:27:47 开始生成报告：结束时间=2014-06-29 21:27:47
+
+2014-06-29 21:27:48 NPR plugin begin : nc.npr.service.plugin.OnlineUserChartImpl
+
+2014-06-29 21:27:48 插件【nc.npr.service.plugin.OnlineUserChartImpl】 在处理文件【null】时报错
+
+2014-06-29 21:27:48 java.lang.NullPointerException
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:207)
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.ReportCentral.creatReport(ReportCentral.java:138)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMService.buildNPR(PSITMService.java:69)
+
+2014-06-29 21:27:48 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+2014-06-29 21:27:48 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+
+2014-06-29 21:27:48 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+
+2014-06-29 21:27:48 	at java.lang.reflect.Method.invoke(Method.java:597)
+
+2014-06-29 21:27:48 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+
+2014-06-29 21:27:48 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:53)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
+
+2014-06-29 21:27:48 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
+
+2014-06-29 21:27:48 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+2014-06-29 21:27:48 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+
+2014-06-29 21:27:48 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+2014-06-29 21:27:48 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+
+2014-06-29 21:27:48 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+
+2014-06-29 21:27:48 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+2014-06-29 21:27:48 	at java.lang.Thread.run(Thread.java:695)
+
+2014-06-29 21:27:48 远程调用异常:
+null
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:327)
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.ReportCentral.creatReport(ReportCentral.java:138)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMService.buildNPR(PSITMService.java:69)
+
+2014-06-29 21:27:48 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+2014-06-29 21:27:48 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+
+2014-06-29 21:27:48 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+
+2014-06-29 21:27:48 	at java.lang.reflect.Method.invoke(Method.java:597)
+
+2014-06-29 21:27:48 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+
+2014-06-29 21:27:48 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:53)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
+
+2014-06-29 21:27:48 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
+
+2014-06-29 21:27:48 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+2014-06-29 21:27:48 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+
+2014-06-29 21:27:48 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+2014-06-29 21:27:48 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+
+2014-06-29 21:27:48 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+
+2014-06-29 21:27:48 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+2014-06-29 21:27:48 	at java.lang.Thread.run(Thread.java:695)
+
+2014-06-29 21:27:48 远程调用异常:
+null
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.log.resolve.LogResolve.resolveByFilesOneTime(LogResolve.java:327)
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.report.NPRReportBuilder.buildReport(NPRReportBuilder.java:34)
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.ReportCentral.creatReport(ReportCentral.java:138)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMService.buildNPR(PSITMService.java:69)
+
+2014-06-29 21:27:48 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+2014-06-29 21:27:48 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+
+2014-06-29 21:27:48 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+
+2014-06-29 21:27:48 	at java.lang.reflect.Method.invoke(Method.java:597)
+
+2014-06-29 21:27:48 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+
+2014-06-29 21:27:48 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:53)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
+
+2014-06-29 21:27:48 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
+
+2014-06-29 21:27:48 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+2014-06-29 21:27:48 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+
+2014-06-29 21:27:48 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+2014-06-29 21:27:48 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+
+2014-06-29 21:27:48 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+
+2014-06-29 21:27:48 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+2014-06-29 21:27:48 	at java.lang.Thread.run(Thread.java:695)
+
+2014-06-29 21:27:48 java.lang.reflect.InvocationTargetException
+
+2014-06-29 21:27:48 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+2014-06-29 21:27:48 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+
+2014-06-29 21:27:48 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+
+2014-06-29 21:27:48 	at java.lang.reflect.Method.invoke(Method.java:597)
+
+2014-06-29 21:27:48 	at nc.monitor.servlet.Invoker.invokeMethod(Invoker.java:88)
+
+2014-06-29 21:27:48 	at nc.monitor.servlet.Invoker.invoke(Invoker.java:30)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMServlet.invoke(PSITMServlet.java:53)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMServlet.doGet(PSITMServlet.java:32)
+
+2014-06-29 21:27:48 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:747)
+
+2014-06-29 21:27:48 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:860)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+2014-06-29 21:27:48 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+
+2014-06-29 21:27:48 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+
+2014-06-29 21:27:48 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+2014-06-29 21:27:48 	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+
+2014-06-29 21:27:48 	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+
+2014-06-29 21:27:48 	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+2014-06-29 21:27:48 	at java.lang.Thread.run(Thread.java:695)
+
+2014-06-29 21:27:48 Caused by: 远程调用异常:
+生成报告时发生错误,请稍后重试或请联系支持人员
+
+2014-06-29 21:27:48 	at uap.ps.itm.npr.service.ReportCentral.creatReport(ReportCentral.java:173)
+
+2014-06-29 21:27:48 	at uap.ps.itm.pub.servlet.PSITMService.buildNPR(PSITMService.java:69)
+
+2014-06-29 21:27:48 	... 22 more

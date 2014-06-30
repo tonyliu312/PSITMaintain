@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/Users/Tony/DEV_ENV/monitor.jar"/>
 	<classpathentry kind="lib" path="client/lib/Access_JDBC30.jar"/>
 	<classpathentry kind="lib" path="client/lib/landf.jar"/>
 	<classpathentry kind="lib" path="server/bin/bootstrap.jar"/>

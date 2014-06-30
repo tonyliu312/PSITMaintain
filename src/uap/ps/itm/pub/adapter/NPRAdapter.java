@@ -3,10 +3,10 @@
  */
 package uap.ps.itm.pub.adapter;
 
-import uap.ps.itm.monitor.RemoteException;
-import uap.ps.itm.monitor.pub.Toolkit;
-import uap.ps.itm.npr.service.NPRCentral;
+import nc.monitor.Exception.RemoteException;
+import nc.monitor.pub.Toolkit;
 import net.sf.json.JSONObject;
+import uap.ps.itm.npr.service.ReportCentral;
 
 /**
  * @author liuzy
@@ -19,7 +19,7 @@ public class NPRAdapter {
 	public JSONObject buildNPR(String shotcode, String beginDateTime,
 			String endDateTime) throws RemoteException {
 
-		NPRCentral nprCentral = new NPRCentral();
+		ReportCentral nprCentral = new ReportCentral();
 		if (Toolkit.isEmpty(shotcode)) {
 			shotcode = nprCentral.doSnapshot();
 		}

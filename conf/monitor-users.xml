@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<root>
+<user>
+	<name>admin</name>
+	<password>kcknocfgieejpokd</password>
+	<resource>clientmonitor;privilegemanager;systemmonitor;cache;mwmonitor;processmonitor;bprcentral;nprcentral;awrcentral;pklock;patchmanager;loganalyze;dbmonitor;MasterHA;Network;serviceregister;config;filetransfer;directlogquery;messageprocessor;newpatchmanager;</resource>
+</user>
+
+</root>

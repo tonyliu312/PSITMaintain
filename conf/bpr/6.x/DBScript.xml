@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bpr>
+    <module-summary>
+    	<name>数据库信息统计</name>
+    </module-summary>
+
+ 
+ <item> 
+  <group>数据量最大的表top50</group>
+   <function>数据量最大的表top50</function>
+   <sql><![CDATA[
+		select /*+BPR*/ rn"排名",table_name"表名",num_rows"行数",MBytes"占用空间(单位：MB)",blocks"块数"
+    from  
+    (select rownum rn,table_name,num_rows,MBytes,blocks
+    from 
+        (  
+          select a.table_name,a.num_rows,b.MBytes,b.blocks
+          from
+                 (select TABLE_NAME,NUM_ROWS
+                 from USER_TABLES 
+                 where NUM_ROWS>0
+                 ) a 
+                 join
+                 (select segment_name,sum(bytes)/1024/1024 as MBytes,sum(blocks) as blocks
+                  from user_segments group by segment_name
+                 ) b on a.table_name=b.segment_name 
+          order by num_rows desc       
+         )t
+    ) t2
+     where rn<51
+     order by rn
+   ]]></sql>  
+ </item>
+
+
+ <item> 
+  <group>表空间存储空间占用</group>
+   <function>表空间存储空间占用</function>
+   <sql><![CDATA[
+   
+   SELECT /*+BPR*/ UPPER(F.TABLESPACE_NAME) "表空间名",
+　　D.TOT_GROOTTE_MB "表空间大小(MB)",
+　　D.TOT_GROOTTE_MB - F.TOTAL_BYTES "已使用空间(MB)",
+　　TO_CHAR(ROUND((D.TOT_GROOTTE_MB - F.TOTAL_BYTES) / D.TOT_GROOTTE_MB * 100,2),'990.99') || '%' "使用比",
+　　F.TOTAL_BYTES "空闲空间(MB)",
+　　F.MAX_BYTES "最大块(MB)"
+　　FROM (SELECT TABLESPACE_NAME,
+　　ROUND(SUM(BYTES) / (1024 * 1024), 2) TOTAL_BYTES,
+　　ROUND(MAX(BYTES) / (1024 * 1024), 2) MAX_BYTES
+　　FROM SYS.DBA_FREE_SPACE
+　　GROUP BY TABLESPACE_NAME) F,
+　　(SELECT DD.TABLESPACE_NAME,
+　　 ROUND(SUM(DD.BYTES) / (1024 * 1024), 2) TOT_GROOTTE_MB
+　　FROM SYS.DBA_DATA_FILES DD
+　　GROUP BY DD.TABLESPACE_NAME) D
+　　WHERE D.TABLESPACE_NAME = F.TABLESPACE_NAME
+　　ORDER BY 1
+   
+   ]]></sql> 
+ </item>
+ 
+  <item> 
+  <group>最近一次统计信息收集时间</group>
+   <function>最近一次统计信息收集时间</function>
+   <sql><![CDATA[
+   
+   select /*+BPR*/ to_char(max(last_analyzed),'yyyy-mm-dd hh24:mi:ss')"收集时间"
+	from 
+	  (select max(last_analyzed) as last_analyzed from user_tables
+	  union all
+	  select max(last_analyzed) as last_analyzed from user_indexes) t
+   
+   ]]></sql> 
+ </item>
+
+<item> 
+  <group>临时表个数</group>
+   <function>临时表个数</function>
+   <sql><![CDATA[
+   
+   select /*+BPR*/ count(1)"数量"  from user_tables where temporary='Y'
+   
+   ]]></sql> 
+ </item>
+
+<item> 
+  <group>数据库参数（非缺省值）</group>
+   <function>数据库参数（非缺省值）</function>
+   <sql><![CDATA[
+   
+   select /*+BPR*/ num"序号",name"名称",value"当前值",description"参数说明"
+	from v$parameter 
+	where isdefault ='FALSE'
+	order by num
+
+   
+   ]]></sql> 
+ </item>
+
+<item> 
+  <group>操作系统基本信息</group>
+   <function>cpu and memory</function>
+   <sql><![CDATA[
+   
+ select stat_name,
+       case
+         when stat_name = 'PHYSICAL_MEMORY_BYTES' then
+          value / 1024 / 1024 ||  ' M'
+         else
+          to_char(value)
+       end as value
+  from v$osstat a
+ where a.stat_name in ('NUM_CPUS', 'PHYSICAL_MEMORY_BYTES')
+
+   
+   ]]></sql> 
+ </item>
+
+</bpr>
