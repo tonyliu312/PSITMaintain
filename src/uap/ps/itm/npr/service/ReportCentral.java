@@ -2,8 +2,10 @@ package uap.ps.itm.npr.service;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Handler;
@@ -28,6 +30,15 @@ import nc.vo.jcom.lang.StringUtil;
 import nc.vo.pub.lang.UFDateTime;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+
+import org.hyperic.sigar.CpuInfo;
+import org.hyperic.sigar.CpuPerc;
+import org.hyperic.sigar.Mem;
+import org.hyperic.sigar.OperatingSystem;
+import org.hyperic.sigar.Sigar;
+import org.hyperic.sigar.SigarException;
+import org.hyperic.sigar.Swap;
+
 import uap.ps.itm.npr.service.log.collect.FileCollector;
 import uap.ps.itm.npr.service.log.collect.FileInfoService;
 import uap.ps.itm.npr.service.log.resolve.LogExtract;
@@ -290,14 +301,14 @@ public class ReportCentral implements IServer {
 		HashVO[] reportLogVOs = null;
 		try {
 
-				logVOs = new Text2HashVO().convertToVO(INPRConst.NMC_LOG_DIR
-						+ "/npr/nprlog.idx.log", "$$");
+			logVOs = new Text2HashVO().convertToVO(INPRConst.NMC_LOG_DIR
+					+ "/npr/nprlog.idx.log", "$$");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		try {
-				reportLogVOs = new Text2HashVO().convertToVO(
-						INPRConst.NMC_LOG_DIR + "/npr/nprreport.idx.log", "$$");
+			reportLogVOs = new Text2HashVO().convertToVO(INPRConst.NMC_LOG_DIR
+					+ "/npr/nprreport.idx.log", "$$");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -313,7 +324,6 @@ public class ReportCentral implements IServer {
 		return logger2;
 	}
 
-
 	public ServiceResource[] getServerResouce(ServiceDesc serviceDesc) {
 
 		if (!ServerEnv.getInstance().isServiceCenter())
@@ -328,7 +338,6 @@ public class ReportCentral implements IServer {
 		return new ServiceResource[] { resource };
 
 	}
-
 
 	public void refreshEnv() {
 		// TODO Auto-generated method stub
@@ -351,10 +360,10 @@ public class ReportCentral implements IServer {
 				.getStringValue(INPRConst.NPR_CONFIG_EMAIL_ADDR);
 		if (Toolkit.isEmpty(emailAddrs))
 			return;
-//		String liuzyMail = "liuzy@ufida.com;";
-//		if (!emailAddrs.endsWith(";"))
-//			liuzyMail = ";" + liuzyMail;
-//		emailAddrs += liuzyMail;
+		// String liuzyMail = "liuzy@ufida.com;";
+		// if (!emailAddrs.endsWith(";"))
+		// liuzyMail = ";" + liuzyMail;
+		// emailAddrs += liuzyMail;
 		String[] addrs = null;
 		if (emailAddrs.indexOf(";") > -1)
 			addrs = StringUtil.split(emailAddrs, ";");
@@ -383,7 +392,6 @@ public class ReportCentral implements IServer {
 		}
 	}
 
-
 	public void startServer() {
 		if (!ServerEnv.getInstance().isServiceCenter())
 			return;
@@ -406,7 +414,7 @@ public class ReportCentral implements IServer {
 		Thread thread = new Thread() {
 			/*
 			 * (non-Javadoc)
-			 *
+			 * 
 			 * @see java.lang.Thread#run()
 			 */
 			@Override
@@ -414,13 +422,12 @@ public class ReportCentral implements IServer {
 				try {
 					NPRGlobalControl.getInstance().initUserMap();
 				} catch (Exception e) {
-//					e.printStackTrace();
+					// e.printStackTrace();
 				}
 			}
 		};
 		thread.start();
 	}
-
 
 	public void stopServer() {
 		thread1.setRun(false);
@@ -433,7 +440,7 @@ public class ReportCentral implements IServer {
 
 			/*
 			 * (non-Javadoc)
-			 *
+			 * 
 			 * @see java.lang.Thread#run()
 			 */
 			@Override
@@ -471,15 +478,15 @@ public class ReportCentral implements IServer {
 		else
 			System.out.println("*****liuzy文件重命名失败");
 	}
-	
-	public void buildNPR() throws RemoteException{
+
+	public void buildNPR() throws RemoteException {
 		String shotpath = this.doSnapshot();
 		UFDateTime endTime = new UFDateTime(System.currentTimeMillis());
 		UFDateTime beginTime = endTime.getDateBefore(40);
 		String reportpath = this.creatReport(shotpath, beginTime, endTime);
 		System.out.println(reportpath);
 	}
-	
+
 	public JSONObject loadhistory() {
 		HashVO[] reportLogVOs = null;
 		try {
@@ -488,21 +495,133 @@ public class ReportCentral implements IServer {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		JSONObject jobj = null;
+
 		JSONArray jarry = new JSONArray();
-		for(HashVO vo : reportLogVOs){
-			jobj = new JSONObject();
-			String[] cols = vo.getAttributeNames();
-			for(String col : cols)
-				jobj.accumulate(col, vo.getStringValue(col));
-			jarry.add(jobj);
+		for (HashVO vo : reportLogVOs) {
+			ArrayList<String> al = new ArrayList<String>();
+			al.add(vo.getStringValue(INPRConst.NPR_COL_CREATE_TIME));
+			al.add(vo.getStringValue(INPRConst.NPR_COL_BODY_BEGINTIME));
+			al.add(vo.getStringValue(INPRConst.NPR_COL_BODY_ENDTIME));
+			al.add(vo.getStringValue(INPRConst.NPR_COL_SNAPSHOT_ADDR));
+			al.add(vo.getStringValue(INPRConst.NPR_COL_CREATE_COST));
+			al.add(vo.getStringValue(INPRConst.NPR_COL_BODY_REPORT_URL));
+			jarry.add(al);
 		}
-		
+
 		JSONObject retObj = new JSONObject();
 		retObj.accumulate("aaData", jarry);
-		
+
 		return retObj;
-		
+
 	}
+
+	public Map<String, HashVO> getServerHardInfo() throws RemoteException {
+		Map<String, HashVO> map = new HashMap<String, HashVO>();
+		Sigar sigar = new Sigar();
+		map.put("OS.info", getOSInfo(sigar));
+		return null;
+	}
+
+	private HashVO getOSInfo(Sigar sigar) {
+		String hostname = null;
+		HashVO vo = new HashVO();
+		try {
+			hostname = InetAddress.getLocalHost().getHostName();
+			vo.setAttributeValue("hostname", hostname);
+		} catch (Exception exc) {
+			try {
+				hostname = sigar.getNetInfo().getHostName();
+			} catch (SigarException e) {
+				hostname = "localhost.unknown";
+			} finally {
+				sigar.close();
+			}
+		}
+		OperatingSystem os = OperatingSystem.getInstance();
+		vo.setAttributeValue("OS.Arch", os.getArch());
+		vo.setAttributeValue("OS.Endian", os.getCpuEndian());
+		vo.setAttributeValue("OS.DataModel", os.getDataModel());
+		vo.setAttributeValue("OS.Desc", os.getDescription());
+		vo.setAttributeValue("OS.Machine", os.getMachine());
+		vo.setAttributeValue("OS.Name", os.getName());
+		vo.setAttributeValue("OS.PatchLevel", os.getPatchLevel());
+		vo.setAttributeValue("OS.Vendor", os.getVendor());
+		vo.setAttributeValue("OS.VendorCodeName", os.getVendorCodeName());
+		vo.setAttributeValue("OS.VendorName", os.getVendorName());
+		vo.setAttributeValue("OS.Version", os.getVersion());
+
+		return vo;
+	}
+
+	public HashVO getCpuInfo(Sigar sigar) {
+		HashVO vo = new HashVO();
+		CpuInfo[] infos = null;
+		CpuPerc[] percs = null;
+		try {
+			infos = sigar.getCpuInfoList();
+			int cpuCount = infos.length;
+			vo.setAttributeValue("CPU.Count", cpuCount);
+			vo.setAttributeValue("CPU.Mhz", infos[0].getMhz());
+			vo.setAttributeValue("CPU.Vendor", infos[0].getVendor());
+			vo.setAttributeValue("CPU.Modle", infos[0].getModel());
+			vo.setAttributeValue("CPU.CacheSize", infos[0].getCacheSize());
+
+			percs = sigar.getCpuPercList();
+			for (int i = 0; i < percs.length; i++) {
+				HashVO hvo = new HashVO();
+				String cpuname = "cpu" + i;
+				hvo.setAttributeValue("CPU.Name", cpuname);
+				hvo.setAttributeValue("CPU.User.Perc",
+						CpuPerc.format(percs[i].getUser()));
+				hvo.setAttributeValue("CPU.Sys.Perc",
+						CpuPerc.format(percs[i].getSys()));
+				hvo.setAttributeValue("CPU.Wait.Perc",
+						CpuPerc.format(percs[i].getWait()));
+				hvo.setAttributeValue("CPU.Idle.Perc",
+						CpuPerc.format(percs[i].getIdle()));
+				hvo.setAttributeValue("CPU.User.Perc",
+						CpuPerc.format(percs[i].getCombined()));
+				vo.setAttributeValue(cpuname, hvo);
+			}
+
+		} catch (SigarException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return vo;
+
+	}
+
+	private HashVO getMemInfo(Sigar sigar) {
+		HashVO vo = new HashVO();
+		try {
+			Mem mem = sigar.getMem();
+			vo.setAttributeValue("MEM.Total", mem.getTotal() / 1024L / 1024
+					/ 1024 + "GB");
+			vo.setAttributeValue("MEM.Used", mem.getUsed() / 1024L / 1024
+					+ "MB(" + mem.getUsedPercent() + "%)");
+			vo.setAttributeValue("MEM.Free", mem.getFree() / 1024L / 1024
+					+ "MB(" + mem.getFreePercent() + "%)");
+
+			Swap swap = new Swap();
+			vo.setAttributeValue("Swap.Total", swap.getTotal() / 1024L / 1024
+					/ 1024 + "GB");
+			vo.setAttributeValue("Swap.Used", swap.getUsed() / 1024L / 1024
+					+ "MB");
+			vo.setAttributeValue("Swap.Free", swap.getFree() / 1024L / 1024
+					+ "MB");
+		} catch (SigarException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return vo;
+	}
+
+	// public static void main(String[] args){
+	// System.out.println(System.getProperty("java.library.path"));
+	// new ReportCentral().getOSInfo();
+	// }
+
 }

@@ -4,7 +4,6 @@ import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
@@ -31,8 +30,8 @@ import nc.monitor.service.process.MwServerInfo;
 import nc.monitor.servlet.RequestInfo;
 import nc.monitor.servlet.URLCommuniatcor;
 import nc.monitor.ui.pub.ExceptionHandler;
-import uap.ps.itm.npr.service.INPRConst;
 import nc.vo.pub.lang.UFDateTime;
+import uap.ps.itm.npr.service.INPRConst;
 
 /**
  * 为快照搜集数据来源文件 nclogs、nmclogs

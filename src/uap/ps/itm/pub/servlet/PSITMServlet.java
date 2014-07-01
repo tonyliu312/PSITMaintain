@@ -6,7 +6,6 @@ import java.util.Hashtable;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,15 +48,18 @@ public class PSITMServlet extends HttpServlet {
 		getInvoke().invoke(request, resp.getOutputStream());
 		
 //		JSONObject resultJSON = new JSONObject();
-		// resultJSON.accumulate(IServletConst.RESULT_SUCCESS,
-		// IServletConst.RESULT_SUCCESS_VAL);
-		// resultJSON.accumulate(IServletConst.RESULT_TYPE,
-		// IServletConst.RESULT_STRING);
-		// resultJSON.accumulate(IServletConst.RESULT_VALUE, "OK");
-
+//		 resultJSON.accumulate(IServletConst.RESULT_SUCCESS,
+//		 IServletConst.RESULT_SUCCESS_VAL);
+//		 resultJSON.accumulate(IServletConst.RESULT_TYPE,
+//		 IServletConst.RESULT_STRING);
+//		 resultJSON.accumulate(IServletConst.RESULT_VALUE, "OK");
+//
+//		
 		
+//		String str = new PSITMService().loadhistory();
 //		PrintWriter out = resp.getWriter();
 //		out.println(resultJSON.toString());
+//		out.println(str);
 //		out.flush();
 //		out.close();
 		

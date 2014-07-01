@@ -1,5 +1,5 @@
 var service_name = "service_name";
-var method = "method";
+var method_name = "method";
 var param = "param";
 var pscall = "/pscall";
 
@@ -7,7 +7,7 @@ function ajson(service, method, para) {
 
     var jsonStr = {
         service_name : service,
-        method : method,
+        method_name : method,
         param : para
     };
     
@@ -23,7 +23,7 @@ function loadtable(table, service, method, para, callback){
             "bProcessing": true,
             "bServerSide": true,
             "bRetrieve": true,
-            "sAjaxSource": pscall + "?rand=" + Math.random(),
+            "sAjaxSource": pscall + "?" + service_name + "=" + service + "&" + method_name + "=" + method + "&" + param + "=" + para,
             "fnServerData": queryData(service, method, para, callback)
         }
     );
@@ -31,7 +31,7 @@ function loadtable(table, service, method, para, callback){
 
 
 function queryData(service, method, para, callback){
-    $.ajax({
+    return $.ajax({
         "type": "get",
         "contentType": "application/json",
         "url": pscall,
@@ -41,8 +41,6 @@ function queryData(service, method, para, callback){
             // "type": 5,
             // "test": "liuzy"
         },
-        "success": function(resp){
-            callback(resp);
-        }
+        "success": callback
     });
 }
