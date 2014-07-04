@@ -43,16 +43,16 @@ public class WebStartupHook implements ServletContextListener {
 		PrintStream err = System.err;
 		try {
 
-			System.setOut(new NullPrintStream(new OutputStream() {
-				@Override
-				public void write(int b) throws IOException {
-				}
-			}));
-			System.setErr(new NullPrintStream(new OutputStream() {
-				@Override
-				public void write(int b) throws IOException {
-				}
-			}));
+//			System.setOut(new NullPrintStream(new OutputStream() {
+//				@Override
+//				public void write(int b) throws IOException {
+//				}
+//			}));
+//			System.setErr(new NullPrintStream(new OutputStream() {
+//				@Override
+//				public void write(int b) throws IOException {
+//				}
+//			}));
 			// ¼ì²élicense
 			ServerEnv.checkLicense = new CheckLicense63().check(); //new CheckLicense().check();
 

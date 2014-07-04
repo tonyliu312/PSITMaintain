@@ -28,12 +28,17 @@ import nc.monitor.service.message.SimpleMailSender;
 import nc.patchmanager.service.FileVO;
 import nc.vo.jcom.lang.StringUtil;
 import nc.vo.pub.lang.UFDateTime;
+import nc.vo.pub.lang.UFDouble;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.hyperic.sigar.CpuInfo;
 import org.hyperic.sigar.CpuPerc;
+import org.hyperic.sigar.FileSystem;
+import org.hyperic.sigar.FileSystemUsage;
 import org.hyperic.sigar.Mem;
+import org.hyperic.sigar.NetInterfaceConfig;
+import org.hyperic.sigar.NetInterfaceStat;
 import org.hyperic.sigar.OperatingSystem;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;
@@ -515,14 +520,29 @@ public class ReportCentral implements IServer {
 
 	}
 
-	public Map<String, HashVO> getServerHardInfo() throws RemoteException {
+	public HashVO getServerHardInfo() throws RemoteException {
 		Map<String, HashVO> map = new HashMap<String, HashVO>();
 		Sigar sigar = new Sigar();
-		map.put("OS.info", getOSInfo(sigar));
-		return null;
+		HashVO vo = null;
+		try {
+			map.put("OS.info", this.getOSInfo(sigar));
+			map.put("CPU.info", this.getCpuInfo(sigar));
+			map.put("MEM.info", this.getMemInfo(sigar));
+			map.put("DISK.info", this.getDiskInfo(sigar));
+			map.put("NET.info", this.getNetInfo(sigar));
+
+			vo = this.getInfoSummary(map);
+		} catch (SigarException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new RemoteException(e.getMessage());
+		} finally {
+			sigar.close();
+		}
+		return vo;
 	}
 
-	private HashVO getOSInfo(Sigar sigar) {
+	private HashVO getOSInfo(Sigar sigar) throws SigarException {
 		String hostname = null;
 		HashVO vo = new HashVO();
 		try {
@@ -533,8 +553,6 @@ public class ReportCentral implements IServer {
 				hostname = sigar.getNetInfo().getHostName();
 			} catch (SigarException e) {
 				hostname = "localhost.unknown";
-			} finally {
-				sigar.close();
 			}
 		}
 		OperatingSystem os = OperatingSystem.getInstance();
@@ -553,75 +571,228 @@ public class ReportCentral implements IServer {
 		return vo;
 	}
 
-	public HashVO getCpuInfo(Sigar sigar) {
+	private HashVO getCpuInfo(Sigar sigar) throws SigarException {
 		HashVO vo = new HashVO();
 		CpuInfo[] infos = null;
 		CpuPerc[] percs = null;
-		try {
-			infos = sigar.getCpuInfoList();
-			int cpuCount = infos.length;
-			vo.setAttributeValue("CPU.Count", cpuCount);
-			vo.setAttributeValue("CPU.Mhz", infos[0].getMhz());
-			vo.setAttributeValue("CPU.Vendor", infos[0].getVendor());
-			vo.setAttributeValue("CPU.Modle", infos[0].getModel());
-			vo.setAttributeValue("CPU.CacheSize", infos[0].getCacheSize());
+		infos = sigar.getCpuInfoList();
+		int cpuCount = infos.length;
+		vo.setAttributeValue("CPU.Count", cpuCount);
+		vo.setAttributeValue("CPU.Mhz", infos[0].getMhz());
+		vo.setAttributeValue("CPU.Vendor", infos[0].getVendor());
+		vo.setAttributeValue("CPU.Modle", infos[0].getModel());
+		vo.setAttributeValue("CPU.CacheSize", infos[0].getCacheSize());
 
-			percs = sigar.getCpuPercList();
-			for (int i = 0; i < percs.length; i++) {
-				HashVO hvo = new HashVO();
-				String cpuname = "cpu" + i;
-				hvo.setAttributeValue("CPU.Name", cpuname);
-				hvo.setAttributeValue("CPU.User.Perc",
-						CpuPerc.format(percs[i].getUser()));
-				hvo.setAttributeValue("CPU.Sys.Perc",
-						CpuPerc.format(percs[i].getSys()));
-				hvo.setAttributeValue("CPU.Wait.Perc",
-						CpuPerc.format(percs[i].getWait()));
-				hvo.setAttributeValue("CPU.Idle.Perc",
-						CpuPerc.format(percs[i].getIdle()));
-				hvo.setAttributeValue("CPU.User.Perc",
-						CpuPerc.format(percs[i].getCombined()));
-				vo.setAttributeValue(cpuname, hvo);
+		percs = sigar.getCpuPercList();
+		for (int i = 0; i < percs.length; i++) {
+			HashVO hvo = new HashVO();
+			String cpuname = "cpu" + i;
+			hvo.setAttributeValue("CPU.User.Perc",
+					CpuPerc.format(percs[i].getUser()));
+			hvo.setAttributeValue("CPU.Sys.Perc",
+					CpuPerc.format(percs[i].getSys()));
+			hvo.setAttributeValue("CPU.Wait.Perc",
+					CpuPerc.format(percs[i].getWait()));
+			hvo.setAttributeValue("CPU.Idle.Perc",
+					CpuPerc.format(percs[i].getIdle()));
+			hvo.setAttributeValue("CPU.User.Perc",
+					CpuPerc.format(percs[i].getCombined()));
+			vo.setAttributeValue(cpuname, hvo);
+		}
+		return vo;
+	}
+
+	private HashVO getMemInfo(Sigar sigar) throws SigarException {
+		HashVO vo = new HashVO();
+		Mem mem = sigar.getMem();
+
+		UFDouble ufd_usedPerc = new UFDouble(mem.getUsedPercent());
+		ufd_usedPerc = ufd_usedPerc.setScale(2, UFDouble.ROUND_HALF_UP);
+		UFDouble ufd_freePerc = new UFDouble(mem.getFreePercent());
+		ufd_freePerc = ufd_freePerc.setScale(2, UFDouble.ROUND_HALF_UP);
+
+		vo.setAttributeValue("MEM.Total", mem.getTotal() / 1024L / 1024 / 1024
+				+ "GB");
+		vo.setAttributeValue("MEM.Used", mem.getUsed() / 1024L / 1024 + "MB("
+				+ ufd_usedPerc.toString() + "%)");
+		vo.setAttributeValue("MEM.Free", mem.getFree() / 1024L / 1024 + "MB("
+				+ ufd_freePerc.toString() + "%)");
+
+		Swap swap = new Swap();
+		vo.setAttributeValue("Swap.Total", swap.getTotal() / 1024L / 1024
+				/ 1024 + "GB");
+		vo.setAttributeValue("Swap.Used", swap.getUsed() / 1024L / 1024 + "MB");
+		vo.setAttributeValue("Swap.Free", swap.getFree() / 1024L / 1024 + "MB");
+
+		return vo;
+	}
+
+	private HashVO getDiskInfo(Sigar sigar) throws SigarException {
+		HashVO vo = new HashVO();
+		FileSystem[] fslist = sigar.getFileSystemList();
+		FileSystemUsage usage = null;
+		UFDouble ufd_sumUsed = new UFDouble();
+		UFDouble ufd_sumAvail = new UFDouble();
+		UFDouble ufd_sumTotal = new UFDouble();
+		for (FileSystem fs : fslist) {
+			String fsname = fs.getDevName();
+			HashVO hvo = new HashVO();
+			hvo.setAttributeValue("FS.Dir", fs.getDirName());
+			hvo.setAttributeValue("FS.Flags", fs.getFlags());
+			hvo.setAttributeValue("FS.SysTypeName", fs.getSysTypeName());
+			hvo.setAttributeValue("FS.Type", fs.getTypeName());
+
+			usage = sigar.getFileSystemUsage(fs.getDirName());
+			switch (fs.getType()) {
+			case 0:
+				break;
+			case 1:
+				break;
+			case 2:
+				UFDouble usePercent = new UFDouble(usage.getUsePercent() * 100D);
+				usePercent = usePercent.setScale(2, UFDouble.ROUND_HALF_UP);
+				UFDouble ufd_total = new UFDouble(
+						usage.getTotal() / 1024 / 1024);
+				ufd_total = ufd_total.setScale(2, UFDouble.ROUND_HALF_UP);
+				hvo.setAttributeValue("FS.Total", ufd_total.toString() + "GB");
+				ufd_sumTotal = ufd_sumTotal.add(ufd_total);
+
+				UFDouble ufd_used = new UFDouble(usage.getUsed() / 1024 / 1024);
+				ufd_used = ufd_used.setScale(2, UFDouble.ROUND_HALF_UP);
+				hvo.setAttributeValue("FS.Used", ufd_used.toString() + "GB("
+						+ usePercent + "%)");
+				ufd_sumUsed = ufd_sumUsed.add(ufd_used);
+
+				UFDouble ufd_avail = new UFDouble(
+						usage.getAvail() / 1024 / 1024);
+				ufd_avail = ufd_avail.setScale(2, UFDouble.ROUND_HALF_UP);
+				hvo.setAttributeValue("FS.Avail", ufd_avail.toString() + "GB");
+				ufd_sumAvail = ufd_sumAvail.add(ufd_avail);
+				break;
 			}
 
-		} catch (SigarException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			hvo.setAttributeValue("FS.DiskReads", usage.getDiskReads());
+			hvo.setAttributeValue("FS.DiskWrites", usage.getDiskWrites());
+			vo.setAttributeValue(fsname, hvo);
 		}
 
-		return vo;
+		ufd_sumUsed = ufd_sumUsed.setScale(2, UFDouble.ROUND_HALF_UP);
+		ufd_sumAvail = ufd_sumAvail.setScale(2, UFDouble.ROUND_HALF_UP);
+		ufd_sumTotal = ufd_sumTotal.setScale(2, UFDouble.ROUND_HALF_UP);
 
+		vo.setAttributeValue("FS.Total", ufd_sumTotal.toString() + "GB");
+		vo.setAttributeValue("FS.Used", ufd_sumUsed.toString() + "GB");
+		vo.setAttributeValue("FS.Avail", ufd_sumAvail.toString() + "GB");
+
+		return vo;
 	}
 
-	private HashVO getMemInfo(Sigar sigar) {
+	private HashVO getNetInfo(Sigar sigar) throws SigarException {
 		HashVO vo = new HashVO();
-		try {
-			Mem mem = sigar.getMem();
-			vo.setAttributeValue("MEM.Total", mem.getTotal() / 1024L / 1024
-					/ 1024 + "GB");
-			vo.setAttributeValue("MEM.Used", mem.getUsed() / 1024L / 1024
-					+ "MB(" + mem.getUsedPercent() + "%)");
-			vo.setAttributeValue("MEM.Free", mem.getFree() / 1024L / 1024
-					+ "MB(" + mem.getFreePercent() + "%)");
-
-			Swap swap = new Swap();
-			vo.setAttributeValue("Swap.Total", swap.getTotal() / 1024L / 1024
-					/ 1024 + "GB");
-			vo.setAttributeValue("Swap.Used", swap.getUsed() / 1024L / 1024
-					+ "MB");
-			vo.setAttributeValue("Swap.Free", swap.getFree() / 1024L / 1024
-					+ "MB");
-		} catch (SigarException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String ifNames[] = sigar.getNetInterfaceList();
+		for (int i = 0; i < ifNames.length; i++) {
+			String name = ifNames[i];
+			NetInterfaceConfig ifconfig = sigar.getNetInterfaceConfig(name);
+			String ipAddr = ifconfig.getAddress();
+			if (Toolkit.isEmpty(ipAddr) || "0.0.0.0".equals(ipAddr)
+					|| "127.0.0.1".equals(ipAddr))
+				continue;
+			HashVO hvo = new HashVO();
+			hvo.setAttributeValue("NET.Addr", ifconfig.getAddress());
+			hvo.setAttributeValue("NET.Mask", ifconfig.getNetmask());
+			if ((ifconfig.getFlags() & 1L) <= 0L) {
+				System.out.println("!IFF_UP...skipping getNetInterfaceStat");
+				continue;
+			}
+			NetInterfaceStat ifstat = sigar.getNetInterfaceStat(name);
+			hvo.setAttributeValue("NET.RxPackets", ifstat.getRxPackets());
+			hvo.setAttributeValue("NET.TxPackets", ifstat.getTxPackets());
+			hvo.setAttributeValue("NET.RxBytes", ifstat.getRxBytes());
+			hvo.setAttributeValue("NET.TxBytes", ifstat.getTxBytes());
+			hvo.setAttributeValue("NET.RxErrors", ifstat.getRxErrors());
+			hvo.setAttributeValue("NET.TxErrors", ifstat.getTxErrors());
+			hvo.setAttributeValue("NET.RxDropped", ifstat.getRxDropped());
+			hvo.setAttributeValue("NET.TxDropped", ifstat.getTxDropped());
+			vo.setAttributeValue(name, hvo);
 		}
-
 		return vo;
 	}
 
-	// public static void main(String[] args){
-	// System.out.println(System.getProperty("java.library.path"));
-	// new ReportCentral().getOSInfo();
-	// }
+	public static void main(String[] args) {
+		// System.out.println(System.getProperty("java.library.path"));
+		try {
+			// Map<String, HashVO> map = new
+			// ReportCentral().getServerHardInfo();
+			// System.out.println(map.get("CPU.info").toString());
+			// System.out.println(map.get("MEM.info").toString());
+			// System.out.println(map.get("DISK.info").toString());
+			// System.out.println(map.get("NET.info"));
+			System.out.println(new ReportCentral().getOSInfo(new Sigar()));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
+	private HashVO getInfoSummary(Map<String, HashVO> map) {
+
+		HashVO vo = new HashVO();
+		StringBuilder sb = new StringBuilder();
+		HashVO hvo = null;
+
+		hvo = map.get("OS.info");
+		String hostname = hvo.getStringValue("hostname");
+		vo.setAttributeValue("主机名", hostname);
+		sb.append("架构：").append(hvo.getStringValue("os.arch")).append("<br>");
+		sb.append("生产商：").append(hvo.getStringValue("os.vendor")).append("<br>");
+		sb.append("系统描述：").append(hvo.getStringValue("os.desc")).append("<br>");
+		sb.append("补丁信息：").append(hvo.getStringValue("os.patchlevel")).append("<br>");
+		vo.setAttributeValue("操作系统", sb.toString());
+		sb.delete(0, sb.length());
+
+		hvo = map.get("CPU.info");
+		sb.append("CPU厂商：").append(hvo.getStringValue("cpu.vendor")).append("<br>");
+		sb.append("内核数：").append(hvo.getStringValue("cpu.count")).append("<br>");
+		sb.append("内核型号：").append(hvo.getStringValue("cpu.model")).append("<br>");
+		sb.append("CPU厂商：").append(hvo.getStringValue("cpu.vendor")).append("<br>");
+		vo.setAttributeValue("CPU", sb.toString());
+		sb.delete(0, sb.length());
+
+		hvo = map.get("MEM.info");
+		sb.append("内存总量：").append(hvo.getStringValue("mem.total")).append("<br>");
+		sb.append("当前使用：").append(hvo.getStringValue("mem.used")).append("<br>");
+		sb.append("剩余空间：").append(hvo.getStringValue("mem.free")).append("<br>");
+		vo.setAttributeValue("内存", sb.toString());
+		sb.delete(0, sb.length());
+
+		sb.append("交换区总量：").append(hvo.getStringValue("swap.total")).append("<br>");
+		sb.append("当前使用：").append(hvo.getStringValue("swap.used")).append("<br>");
+		sb.append("剩余空间：").append(hvo.getStringValue("swap.free")).append("<br>");
+		vo.setAttributeValue("交换区", sb.toString());
+		sb.delete(0, sb.length());
+
+		hvo = map.get("DISK.info");
+		sb.append("磁盘空间总量：").append(hvo.getStringValue("fs.total")).append("<br>");
+		sb.append("当前使用：").append(hvo.getStringValue("fs.used")).append("<br>");
+		sb.append("剩余空间：").append(hvo.getStringValue("fs.avail")).append("<br>");
+		vo.setAttributeValue("磁盘", sb.toString());
+		sb.delete(0, sb.length());
+
+		hvo = map.get("NET.info");
+		String[] names = hvo.getAttributeNames();
+		for (int i = 0; i < names.length; i++) {
+			HashVO ethVO = (HashVO) hvo.getAttributeValue(names[i]);
+			sb.append("网卡：").append(names[i]).append(" IP地址：")
+					.append(ethVO.getStringValue("net.addr")).append("<br>");
+			sb.append("子网掩码：").append(ethVO.getStringValue("net.mask")).append("<br>");
+			sb.append("接收包数量：").append(ethVO.getStringValue("net.rxpackets"))
+					.append(" 字节数：")
+					.append(ethVO.getStringValue("net.rxbytes")).append("<br>");
+			sb.append("发送包数量").append(ethVO.getStringValue("net.txpackets"))
+					.append(" 字节数：")
+					.append(ethVO.getStringValue("net.txbytes")).append("<br>");
+		}
+		vo.setAttributeValue("网络设备", sb.toString());
+		return vo;
+	}
 }

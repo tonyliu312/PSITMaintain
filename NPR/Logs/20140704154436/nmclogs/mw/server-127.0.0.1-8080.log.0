@@ -1,0 +1,89 @@
+
+$$ts=2014-07-04 15:30:27	$$server=server	$$msg=now begin to monitor server ......	
+$$ts=2014-07-04 15:30:27	$$servername=server	$$ratio=NaN	$$wcrange=100-100	$$respcost=0	$$throughput=0	
+$$ts=2014-07-04 15:30:28	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:30:32	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:30:36	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:30:37	$$servername=server	$$ratio=NaN	$$wcrange=100-100	$$respcost=1002	$$throughput=0	
+$$ts=2014-07-04 15:30:40	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:30:44	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:30:47	$$servername=server	$$ratio=NaN	$$wcrange=100-100	$$respcost=1000	$$throughput=0	
+$$ts=2014-07-04 15:30:48	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:30:52	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:30:56	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:30:57	$$servername=server	$$ratio=NaN	$$wcrange=100-100	$$respcost=1001	$$throughput=0	
+$$ts=2014-07-04 15:30:59	$$server=server	$$msg=check failed!now begin to stop the server:server	
+$$ts=2014-07-04 15:30:59	$$server=server	$$msg=shutdown the server:server immediately with nodeagent	
+$$ts=2014-07-04 15:30:59	$$server=server	$$msg=restart server server costtime=0	
+$$ts=2014-07-04 15:32:01	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:32:05	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:32:09	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:32:13	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:32:17	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:32:21	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:32:25	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:32:29	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:32:32	$$server=server	$$msg=check failed!now begin to stop the server:server	
+$$ts=2014-07-04 15:32:32	$$server=server	$$msg=shutdown the server:server immediately with nodeagent	
+$$ts=2014-07-04 15:32:32	$$server=server	$$msg=restart server server costtime=0	
+$$ts=2014-07-04 15:33:34	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:33:38	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:33:42	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:33:46	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:33:50	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:33:54	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:33:58	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:34:02	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:34:05	$$server=server	$$msg=check failed!now begin to stop the server:server	
+$$ts=2014-07-04 15:34:05	$$server=server	$$msg=shutdown the server:server immediately with nodeagent	
+$$ts=2014-07-04 15:34:05	$$server=server	$$msg=restart server server costtime=0	
+$$ts=2014-07-04 15:38:22	$$server=server	$$msg=now begin to monitor server ......	
+$$ts=2014-07-04 15:38:22	$$servername=server	$$ratio=NaN	$$wcrange=100-100	$$respcost=0	$$throughput=0	
+$$ts=2014-07-04 15:38:23	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:38:27	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:38:31	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:38:32	$$servername=server	$$ratio=NaN	$$wcrange=100-100	$$respcost=1006	$$throughput=0	
+$$ts=2014-07-04 15:38:35	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:38:39	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:38:42	$$servername=server	$$ratio=NaN	$$wcrange=100-100	$$respcost=1001	$$throughput=0	
+$$ts=2014-07-04 15:38:43	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:38:47	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:38:51	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:38:52	$$servername=server	$$ratio=NaN	$$wcrange=100-100	$$respcost=1001	$$throughput=0	
+$$ts=2014-07-04 15:38:54	$$server=server	$$msg=check failed!now begin to stop the server:server	
+$$ts=2014-07-04 15:38:54	$$server=server	$$msg=shutdown the server:server immediately with nodeagent	
+$$ts=2014-07-04 15:38:54	$$server=server	$$msg=restart server server costtime=0	
+$$ts=2014-07-04 15:39:56	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:40:00	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:40:04	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:40:08	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:40:12	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:40:16	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:40:20	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:40:24	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:40:27	$$server=server	$$msg=check failed!now begin to stop the server:server	
+$$ts=2014-07-04 15:40:27	$$server=server	$$msg=shutdown the server:server immediately with nodeagent	
+$$ts=2014-07-04 15:40:27	$$server=server	$$msg=restart server server costtime=0	
+$$ts=2014-07-04 15:41:29	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:41:33	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:41:37	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:41:41	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:41:45	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:41:49	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:41:53	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:41:57	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:42:00	$$server=server	$$msg=check failed!now begin to stop the server:server	
+$$ts=2014-07-04 15:42:00	$$server=server	$$msg=shutdown the server:server immediately with nodeagent	
+$$ts=2014-07-04 15:42:00	$$server=server	$$msg=restart server server costtime=0	
+$$ts=2014-07-04 15:43:02	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:43:06	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:43:10	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:43:14	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:43:18	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:43:22	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:43:26	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:43:30	$$server=server	$$msg=server: Response time is more than threshold! check again!	
+$$ts=2014-07-04 15:43:33	$$server=server	$$msg=check failed!now begin to stop the server:server	
+$$ts=2014-07-04 15:43:33	$$server=server	$$msg=shutdown the server:server immediately with nodeagent	
+$$ts=2014-07-04 15:43:33	$$server=server	$$msg=restart server server costtime=0	
+$$ts=2014-07-04 15:44:35	$$server=server	$$msg=server: Response time is more than threshold! check again!	

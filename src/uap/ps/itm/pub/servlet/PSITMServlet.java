@@ -44,6 +44,8 @@ public class PSITMServlet extends HttpServlet {
 		else
 			request = this.getRequestInfo4JSON(req);
 		
+		request.setServer2Server(true);
+		
 		ServerEnv.getInstance().setRequestInfo(request);
 		getInvoke().invoke(request, resp.getOutputStream());
 		
@@ -77,7 +79,7 @@ public class PSITMServlet extends HttpServlet {
 		String serviceName = req.getParameter(IServletConst.SERVICE_NAME);
 		if (Toolkit.isEmpty(serviceName))
 			return null;
-		String method = req.getParameter(IServletConst.METHOD);
+		String method = req.getParameter(IServletConst.METHOD_NAME);
 		if (Toolkit.isEmpty(method))
 			return null;
 		String param = req.getParameter(IServletConst.PARAM);
@@ -94,7 +96,7 @@ public class PSITMServlet extends HttpServlet {
 		String serviceName = jsonObj.getString(IServletConst.SERVICE_NAME);
 		if (Toolkit.isEmpty(serviceName))
 			return null;
-		String method = jsonObj.getString(IServletConst.METHOD);
+		String method = jsonObj.getString(IServletConst.METHOD_NAME);
 		if (Toolkit.isEmpty(method))
 			return null;
 		String param = jsonObj.getString(IServletConst.PARAM);

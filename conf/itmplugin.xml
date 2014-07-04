@@ -8,6 +8,15 @@
 		<datasrc>data_src_null</datasrc>
 	</plugin>
 	<plugin>
+		<caption>硬件环境信息</caption>
+		<show>Y</show>
+		<show-order>5</show-order>
+		<show-level>1</show-level>
+		<datasrc>nc.mw</datasrc>
+		<format>table</format>
+		<impl-class>uap.ps.itm.npr.service.plugin.ServerHardInfoPluginImpl</impl-class>
+	</plugin>
+	<plugin>
 		<caption>中间件信息</caption>
 		<show>Y</show>
 		<show-order>10</show-order>
@@ -296,6 +305,7 @@
 		<filter-file>连接泄露的远程调用统计</filter-file>
 		<impl-class>uap.ps.itm.npr.service.plugin.RemoteCallConnNotClosePluginImpl</impl-class>
 	</plugin>
+	<!--
 	<plugin>
 		<caption>怀疑远程调用次数超标的操作</caption>
 		<show>Y</show>
@@ -326,6 +336,7 @@
 		<filter-file>上行或下行流量超过1M的远程调用统计</filter-file>
 		<impl-class>uap.ps.itm.npr.service.plugin.ReadOrWriteOver1MImpl</impl-class>
 	</plugin>
+	-->
 	<plugin>
 		<caption>中间件运行情况统计</caption>
 		<show>Y</show>

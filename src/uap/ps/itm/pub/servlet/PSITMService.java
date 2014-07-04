@@ -5,6 +5,7 @@ package uap.ps.itm.pub.servlet;
 
 import nc.monitor.Exception.RemoteException;
 import nc.monitor.service.center.IServer;
+import nc.monitor.service.center.ServerEnv;
 import nc.monitor.service.center.ServiceDesc;
 import nc.monitor.service.center.ServiceResource;
 import net.sf.json.JSONObject;
@@ -16,6 +17,8 @@ import uap.ps.itm.pub.consts.IServletConst;
  * 
  */
 public class PSITMService implements IServer {
+
+	public static ServiceResource resource = null;
 
 	/*
 	 * (non-Javadoc)
@@ -48,8 +51,16 @@ public class PSITMService implements IServer {
 	 */
 	@Override
 	public ServiceResource[] getServerResouce(ServiceDesc serviceDesc) {
-		// TODO Auto-generated method stub
-		return null;
+		if (!ServerEnv.getInstance().isServiceCenter())
+			return null;
+		resource = new ServiceResource();
+		resource.setDisplayName(ServerEnv.getHostName());
+		resource.setHost(ServerEnv.getLocalAddr());
+		resource.setPort(ServerEnv.getInstance().getLocalSocket().getPort());
+		resource.setRequestUrl(ServerEnv.getInstance().getLocalUrl());
+		resource.setServiceName(serviceDesc.getServiceName());
+		resource.setServiceDesc(serviceDesc);
+		return new ServiceResource[] { resource };
 	}
 
 	/*
@@ -63,7 +74,7 @@ public class PSITMService implements IServer {
 
 	}
 
-	public JSONObject buildNPR() throws RemoteException {
+	public String buildNPR() throws RemoteException {
 		// File f = new File(".");
 		// System.out.println(f.getAbsolutePath());
 		// try {
@@ -73,15 +84,15 @@ public class PSITMService implements IServer {
 		// e.printStackTrace();
 		// }
 
-		// ReportCentral rc = new ReportCentral();
-		// rc.buildNPR();
+		ReportCentral rc = new ReportCentral();
+		rc.buildNPR();
 		JSONObject resultJSON = new JSONObject();
 		resultJSON.accumulate(IServletConst.RESULT_SUCCESS,
 				IServletConst.RESULT_SUCCESS_VAL);
 		resultJSON.accumulate(IServletConst.RESULT_TYPE,
 				IServletConst.RESULT_STRING);
 		resultJSON.accumulate(IServletConst.RESULT_VALUE, "OK");
-		return resultJSON;
+		return resultJSON.toString();
 	}
 
 	public String loadhistory() {

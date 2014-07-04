@@ -1,5 +1,5 @@
 var service_name = "service_name";
-var method_name = "method";
+var method_name = "method_name";
 var param = "param";
 var pscall = "/pscall";
 

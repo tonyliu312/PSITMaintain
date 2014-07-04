@@ -1,0 +1,2 @@
+$$数据源名称=test	$$数据库类型=ORACLE11G	$$数据库地址=jdbc:oracle:thin:@127.0.0.1:1521:orcl	$$用户名=uap63	$$最大连接数=50	$$最小连接数=1	
+$$数据源名称=design	$$数据库类型=SQLSERVER2012	$$数据库地址=jdbc:sqlserver://10.10.70.7:1433;database=orcl;sendStringParametersAsUnicode=true;responseBuffering=adaptive	$$用户名=uap63	$$最大连接数=50	$$最小连接数=1	

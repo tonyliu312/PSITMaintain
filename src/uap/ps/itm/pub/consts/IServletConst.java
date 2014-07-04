@@ -11,7 +11,7 @@ public interface IServletConst {
 
 	public final static String SERVICE_NAME = "service_name";
 
-	public final static String METHOD = "method";
+	public final static String METHOD_NAME = "method_name";
 
 	public final static String PARAM = "param";
 

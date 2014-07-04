@@ -49,6 +49,7 @@ import uap.ps.itm.npr.service.plugin.RequestMasterTop10;
 import uap.ps.itm.npr.service.plugin.SQLCostTimeTop10;
 import uap.ps.itm.npr.service.plugin.SQLExecuteSummaryImpl;
 import uap.ps.itm.npr.service.plugin.SQLResultTop10;
+import uap.ps.itm.npr.service.plugin.ServerHardInfoPluginImpl;
 import uap.ps.itm.npr.service.plugin.ServersThroughputPluginImpl;
 import uap.ps.itm.npr.service.plugin.SystemMonitorPluginImpl;
 import uap.ps.itm.npr.service.plugin.ThroughputPluginImpl;
@@ -625,6 +626,8 @@ public class LogResolve {
 			return new RemoteCallTimesOverLimit();
 		else if ("uap.ps.itm.npr.service.plugin.JvmWebThreadChartImpl".equals(implName))
 			return new JvmWebThreadChartImpl();
+		else if ("uap.ps.itm.npr.service.plugin.ServerHardInfoPluginImpl".equals(implName))
+			return new ServerHardInfoPluginImpl();
 		return null;
 	}
 

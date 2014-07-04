@@ -44,7 +44,7 @@ public class NPRReportBuilder {
 				destDir.mkdirs();
 			String destFileName = destDirName + "/npr.html";
 			BPRReport report = new BPRReport();
-			report.setReportTitle("NC Performance Report");
+			report.setReportTitle("系统巡检报告");
 			report.setDestFileName(destFileName);
 			report.setBeginTime(beginTime);
 			report.setEndTime(endTime);
