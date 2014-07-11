@@ -208,6 +208,7 @@ body {
 							<table id="histab"
 								class="table table-striped table-bordered bootstrap-datatable datatable">
 								<thead>
+								<!-- 
 									<tr>
 										<th style="text-align: center">创建时间</th>
 										<th style="text-align: center">起始时间</th>
@@ -216,12 +217,20 @@ body {
 										<th style="text-align: center">耗时</th>
 										<th style="text-align: center">链接</th>
 									</tr>
+									 -->
+									 <tr>
+										<th style="text-align: center">编号</th>
+										<th style="text-align: center">起止时间</th>
+										<th style="text-align: center">创建时间</th>
+										<th style="text-align: center">创建者</th>
+										<th style="text-align: center">状态</th>
+										<th style="text-align: center">操作</th>
+									</tr>
 								</thead>
-								<!--
 								<tbody>
 									<tr>
-										<td>NPR201406200001</td>
-										<td>2014年6月20日 13:40 至 2014年6月20日 16:40</td>
+										<td class="center">201406200005</td>
+										<td class="center">2014年6月20日 13:40 至 2014年6月20日 16:55</td>
 										<td class="center">2014年6月21日 15:33</td>
 										<td class="center">管理员</td>
 										<td class="center"><span class="label label-success">Success</span>
@@ -234,8 +243,67 @@ body {
 												class="icon-trash icon-white"></i> 删除
 										</a></td>
 									</tr>
+									<tr>
+										<td class="center">201406200004</td>
+										<td class="center">2014年6月20日 13:51 至 2014年6月20日 16:52</td>
+										<td class="center">2014年6月21日 15:29</td>
+										<td class="center">管理员</td>
+										<td class="center"><span class="label label-success">Success</span>
+										</td>
+										<td class="center"><a class="btn btn-success" href="#">
+												<i class="icon-zoom-in icon-white"></i> 查看
+										</a> <a class="btn btn-info" href="#"> <i
+												class="icon-edit icon-white"></i> 下载
+										</a> <a class="btn btn-danger" href="#"> <i
+												class="icon-trash icon-white"></i> 删除
+										</a></td>
+									</tr>
+									<tr>
+										<td class="center">201406200003</td>
+										<td class="center">2014年6月20日 13:56 至 2014年6月20日 16:49</td>
+										<td class="center">2014年6月21日 15:25</td>
+										<td class="center">管理员</td>
+										<td class="center"><span class="label label-success">Success</span>
+										</td>
+										<td class="center"><a class="btn btn-success" href="#">
+												<i class="icon-zoom-in icon-white"></i> 查看
+										</a> <a class="btn btn-info" href="#"> <i
+												class="icon-edit icon-white"></i> 下载
+										</a> <a class="btn btn-danger" href="#"> <i
+												class="icon-trash icon-white"></i> 删除
+										</a></td>
+									</tr>
+									<tr>
+										<td class="center">201406200002</td>
+										<td class="center">2014年6月20日 14:02 至 2014年6月20日 16:44</td>
+										<td class="center">2014年6月21日 15:11</td>
+										<td class="center">管理员</td>
+										<td class="center"><span class="label label-warning">Error</span>
+										</td>
+										<td class="center"><a class="btn btn-success" href="#">
+												<i class="icon-zoom-in icon-white"></i> 查看
+										</a> <a class="btn btn-info" href="#"> <i
+												class="icon-edit icon-white"></i> 下载
+										</a> <a class="btn btn-danger" href="#"> <i
+												class="icon-trash icon-white"></i> 删除
+										</a></td>
+									</tr>
+									<tr>
+										<td class="center">201406200001</td>
+										<td class="center">2014年6月20日 14:20 至 2014年6月20日 16:40</td>
+										<td class="center">2014年6月21日 15:03</td>
+										<td class="center">管理员</td>
+										<td class="center"><span class="label label-success">Success</span>
+										</td>
+										<td class="center"><a class="btn btn-success" href="#">
+												<i class="icon-zoom-in icon-white"></i> 查看
+										</a> <a class="btn btn-info" href="#"> <i
+												class="icon-edit icon-white"></i> 下载
+										</a> <a class="btn btn-danger" href="#"> <i
+												class="icon-trash icon-white"></i> 删除
+										</a></td>
+									</tr>
 								</tbody>
-								-->
 							</table>
 						</div>
 					</div>
@@ -272,7 +340,7 @@ body {
 				2014
 			</p>
 			<p class="pull-right">
-				Powered by: <a href="http://usman.it/free-responsive-admin-template">刘智宇</a>
+				Powered by: <a href="http://usman.it/free-responsive-admin-template">Tony Liu</a>
 			</p>
 		</footer>
 
@@ -282,11 +350,16 @@ body {
 	<!-- external javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
+	
+	<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/jquery.dataTables.js"></script>
+	
 
-	<!-- jQuery -->
-	<script src="js/jquery-1.7.2.min.js"></script>
 	<!-- jQuery UI -->
 	<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+	
+	
 	<!-- transition / effect library -->
 	<script src="js/bootstrap-transition.js"></script>
 	<!-- alert enhancer library -->
@@ -318,8 +391,11 @@ body {
 	<!-- calander plugin -->
 	<script src='js/fullcalendar.min.js'></script>
 	<!-- data table plugin -->
+	<!-- 
 	<script src='js/jquery.dataTables.min.js'></script>
-
+	 -->
+	
+	
 	<!-- chart libraries start -->
 	<script src="js/excanvas.js"></script>
 	<script src="js/jquery.flot.min.js"></script>
@@ -356,9 +432,7 @@ body {
 	<script src="js/json2.js"></script>
 	<!-- itm.pub.js-->
 	<script src="js/itm.pub.js"></script>
-
 	<script src="js/report.js"></script>
-
 
 </body>
 </html>

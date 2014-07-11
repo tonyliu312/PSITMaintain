@@ -16,15 +16,16 @@ function ajson(service, method, para) {
 }
 
 function loadtable(table, service, method, para, callback){
-    $(table).dataTable().fnDestroy();
+//    $(table).dataTable().fnDestroy();
     // $(table).find("table").DataTables();
     $(table).dataTable(
         {
-            "bProcessing": true,
-            "bServerSide": true,
-            "bRetrieve": true,
-            "sAjaxSource": pscall + "?" + service_name + "=" + service + "&" + method_name + "=" + method + "&" + param + "=" + para,
-            "fnServerData": queryData(service, method, para, callback)
+            "processing": true,
+            "serverSide": true,
+//            "bRetrieve": true,
+            "ajax": pscall + "?" + service_name + "=" + service + "&" + method_name + "=" + method + "&" + param + "=" + para//,
+//            "sAjaxSource": pscall + "?" + service_name + "=" + service + "&" + method_name + "=" + method + "&" + param + "=" + para,
+//            "fnServerData": queryData(service, method, para, callback)
         }
     );
 }

@@ -1,6 +1,6 @@
-$(document).ready(
-    loadtable('#histab', "itmcentral","loadhistory","all",callbackNPR)
-);
+//$(document).ready(
+//    loadtable('#histab', "itmcentral","loadhistory","all",null)
+//);
 
 function buildNPR(){
     $.getJSON(pscall,ajson("itmcentral","buildNPR","all"),callbackNPR);

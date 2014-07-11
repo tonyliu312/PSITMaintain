@@ -514,6 +514,9 @@ public class ReportCentral implements IServer {
 		}
 
 		JSONObject retObj = new JSONObject();
+		retObj.accumulate("draw", 1);
+		retObj.accumulate("recordsTotal", 100);
+		retObj.accumulate("recordsFiltered", 10);
 		retObj.accumulate("aaData", jarry);
 
 		return retObj;
